@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="scene-final">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/scene-final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

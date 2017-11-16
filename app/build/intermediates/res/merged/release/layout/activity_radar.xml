@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/reTitle"
+        layout="@layout/layout_title" />
+
+    <RelativeLayout
+        android:id="@+id/reContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reTitle"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/reImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@android:style/Widget.DeviceDefault.ProgressBar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:indeterminateDrawable="@anim/anim_loading_black" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/iv_no_pic" />
+
+            <TextView
+                android:id="@+id/tvPercent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/corner_dialog"
+                android:gravity="center"
+                android:text="0%"
+                android:textColor="@color/white"
+                android:textSize="@dimen/level_5"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/reImage"
+            android:background="@color/translucent"
+            android:gravity="center_vertical"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/ivPlay"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#90000000"
+                android:padding="5dp"
+                android:src="@drawable/iv_play" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:maxHeight="2dip"
+                android:minHeight="2dip"
+                android:progress="0"
+                android:progressDrawable="@drawable/seekbar_drawable"
+                android:thumb="@drawable/seekbar_thumb" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:textColor="@color/white"
+                android:textSize="@dimen/level_5" />
+        </LinearLayout>
+
+        <GridView
+            android:id="@+id/gridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reImage"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:cacheColorHint="@color/transparent"
+            android:columnWidth="100dip"
+            android:fadingEdge="none"
+            android:gravity="center"
+            android:horizontalSpacing="3dip"
+            android:listSelector="@color/transparent"
+            android:numColumns="4"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="3dip" />
+    </RelativeLayout>
+
+</RelativeLayout>

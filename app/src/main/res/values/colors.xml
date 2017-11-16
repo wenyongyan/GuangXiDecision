@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text_color1">#CBCBCB</color>
+    <color name="text_color2">#A3A7AC</color>
+    <color name="text_color3">#333333</color>
+    <color name="text_color4">#727272</color>
+    <color name="transparent">#00000000</color>
+    <color name="translucent">#80000000</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="gray">#d9d9d9</color>
+    <color name="light_gray">#f0eff5</color>
+    <color name="indicator_bar">#5754FD</color>
+    <color name="divider_color">#8021E40C</color>
+    <color name="cubic_color">#12ADEF</color>
+    <color name="low_color">#15ADF2</color>
+    <color name="high_color">#C07C7A</color>
+    <color name="blue">#1d4171</color>
+    <color name="green">#00ff00</color>
+    <color name="snow">#8D98B3</color>
+    <color name="rain">#29A308</color>
+    <color name="fog">#59FFFF</color>
+    <color name="shachen">#FD6801</color>
+    <color name="mai">#C99B14</color>
+    <color name="builder">#d87a80</color>
+    <color name="sure_color">#01548b</color>
+    <color name="selected_color">#2D5A9D</color>
+    <color name="station_color1">#ECEFF4</color>
+    <color name="title_bg">#3072ff</color>
+    <color name="red">#FF0033</color>
+    <color name="typhoon_bg">#f3758c97</color>
+    <color name="cell_pressed">#353C48</color>
+    <color name="yellow">#fff139</color>
+    
+</resources>

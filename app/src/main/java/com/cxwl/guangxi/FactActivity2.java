@@ -598,20 +598,18 @@ public class FactActivity2 extends BaseActivity implements View.OnClickListener,
             e.printStackTrace();
         }
 
-        drawAllDistrict(mContext, aMap, Color.BLACK, polylines);
+        drawAllDistrict();
         progressBar.setVisibility(View.GONE);
     }
 
     /**
-     * 回执区域
-     * @param context
-     * @param aMap
+     * 绘制广西市县边界
      */
-    public static void drawAllDistrict(Context context, AMap aMap, int color, List<Polyline> polyLineList) {
+    private void drawAllDistrict() {
         if (aMap == null) {
             return;
         }
-        String result = CommonUtil.getFromAssets(context, "guangxi.json");
+        String result = CommonUtil.getFromAssets(mContext, "guangxi.json");
         if (!TextUtils.isEmpty(result)) {
             try {
                 JSONObject obj = new JSONObject(result);
@@ -644,7 +642,7 @@ public class FactActivity2 extends BaseActivity implements View.OnClickListener,
                     for (int m = 0; m < coordinates.length(); m++) {
                         JSONArray array2 = coordinates.getJSONArray(m);
                         PolylineOptions polylineOption = new PolylineOptions();
-                        polylineOption.width(1).color(color);
+                        polylineOption.width(1).color(0xfff0eff5);
                         for (int j = 0; j < array2.length(); j++) {
                             JSONArray itemArray = array2.getJSONArray(j);
                             double lng = itemArray.getDouble(0);
@@ -652,7 +650,7 @@ public class FactActivity2 extends BaseActivity implements View.OnClickListener,
                             polylineOption.add(new LatLng(lat, lng));
                         }
                         Polyline polyLine = aMap.addPolyline(polylineOption);
-                        polyLineList.add(polyLine);
+                        polylines.add(polyLine);
                     }
                 }
             } catch (JSONException e) {

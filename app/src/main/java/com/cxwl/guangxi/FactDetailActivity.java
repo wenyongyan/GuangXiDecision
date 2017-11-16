@@ -5,6 +5,7 @@ package com.cxwl.guangxi;
  */
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -109,13 +110,12 @@ public class FactDetailActivity extends BaseActivity implements OnClickListener{
 		listView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-//				FactDto dto = realDatas.get(arg2);
-//				Intent intent = new Intent(mContext, StationMonitorDetailActivity.class);
-//				Bundle bundle = new Bundle();
-//				bundle.putParcelable("data", dto);
-//				bundle.putString("childId", childId);
-//				intent.putExtras(bundle);
-//				startActivity(intent);
+				FactDto dto = realDatas.get(arg2);
+				Intent intent = new Intent(mContext, FactDetailChartActivity.class);
+				Bundle bundle = new Bundle();
+				bundle.putParcelable("data", dto);
+				intent.putExtras(bundle);
+				startActivity(intent);
 			}
 		});
 	}

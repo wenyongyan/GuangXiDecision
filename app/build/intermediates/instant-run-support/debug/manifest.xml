@@ -117,6 +117,9 @@
             android:name="com.cxwl.guangxi.FactDetailActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.cxwl.guangxi.FactDetailChartActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.cxwl.guangxi.WeatherActivity"
             android:screenOrientation="portrait" />
         <activity

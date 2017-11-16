@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:2:1-145:12
+ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:2:1-149:12
 	package
 		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:3:5-31
 		INJECTED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml
@@ -58,7 +58,7 @@ ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/Andro
 	android:name
 		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:15:22-70
 application
-ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:17:5-143:19
+ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:17:5-147:19
 MERGED from [com.android.support:appcompat-v7:25.1.1] /Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:25.1.1] /Users/shawn/.android/build-cache/2f71cdd8da0e165da6f6dbe50b84c0178d2888ff/output/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.1.1] /Users/shawn/.android/build-cache/74168adef9f145d7d3dc7096ef1d0fd06c645946/output/AndroidManifest.xml:25:5-20
@@ -244,20 +244,26 @@ ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/Andro
 		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:132:13-49
 	android:name
 		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:131:13-63
-activity#com.cxwl.guangxi.WeatherActivity
+activity#com.cxwl.guangxi.FactDetailChartActivity
 ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:134:9-136:52
 	android:screenOrientation
 		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:136:13-49
 	android:name
-		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:135:13-60
-activity#com.cxwl.guangxi.ImageZoomActivity
-ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:138:9-141:80
+		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:135:13-68
+activity#com.cxwl.guangxi.WeatherActivity
+ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:138:9-140:52
 	android:screenOrientation
 		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:140:13-49
-	android:theme
-		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:141:13-77
 	android:name
-		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:139:13-62
+		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:139:13-60
+activity#com.cxwl.guangxi.ImageZoomActivity
+ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:142:9-145:80
+	android:screenOrientation
+		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:144:13-49
+	android:theme
+		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:145:13-77
+	android:name
+		ADDED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml:143:13-62
 uses-sdk
 INJECTED from /Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:25.1.1] /Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/AndroidManifest.xml:21:5-23:78

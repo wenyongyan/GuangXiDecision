@@ -97,7 +97,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="77dfc168953aa1f445e1dd23d11bf0c4d1c59f0d">
+        sha1="b8b278a9632f5ef388bf272f0a299eb3f3768da0">
         <dex dex="/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_222120f576662c3d44f50ef1e0e79e5f5cd11b20/classes.dex" />
     </item>
     <item

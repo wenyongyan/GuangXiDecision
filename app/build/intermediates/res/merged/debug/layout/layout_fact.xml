@@ -15,14 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="300dp" />
 
-        <TextView
-            android:layout_width="70dp"
-            android:layout_height="20dp"
-            android:layout_alignBottom="@+id/mapView"
-            android:layout_alignLeft="@+id/mapView"
-            android:background="@color/white"
-            android:visibility="gone" />
-
         <ImageView
             android:id="@+id/ivChart"
             android:layout_width="30dp"

@@ -92,6 +92,14 @@
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/layout/fragment_index_item.xml"
     },
     {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/layout/fragment_fact_detail.xml",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/layout/fragment_fact_detail.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/layout/activity_fact_detail_chart.xml",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/layout/activity_fact_detail_chart.xml"
+    },
+    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/layout/adapter_fact_select.xml",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/layout/adapter_fact_select.xml"
     },

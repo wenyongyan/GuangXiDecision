@@ -13,8 +13,8 @@ android {
         applicationId "com.cxwl.guangxi"
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 22
-        versionName "1.1.1"
+        versionCode 23
+        versionName "1.1.10"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 

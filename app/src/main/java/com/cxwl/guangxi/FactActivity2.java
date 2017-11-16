@@ -82,6 +82,7 @@ public class FactActivity2 extends BaseActivity implements View.OnClickListener,
     private List<Polygon> polygons = new ArrayList<>();//图层数据
     private List<Text> texts = new ArrayList<>();//等值线数值
     private List<Polyline> polylines = new ArrayList<>();//广西边界市县边界线
+    private List<Text> cityTexts = new ArrayList<>();//市县名称
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -534,6 +535,16 @@ public class FactActivity2 extends BaseActivity implements View.OnClickListener,
     }
 
     /**
+     * 清除市县名称
+     */
+    private void removeCityTexts() {
+        for (int i = 0; i < cityTexts.size(); i++) {
+            cityTexts.get(i).remove();
+        }
+        cityTexts.clear();
+    }
+
+    /**
      * 绘制图层
      */
     private void drawDataToMap(String result) {
@@ -543,6 +554,7 @@ public class FactActivity2 extends BaseActivity implements View.OnClickListener,
         removeTexts();
         removePolygons();
         removePolylines();
+        removeCityTexts();
 
         try {
             JSONObject obj = new JSONObject(result);
@@ -583,7 +595,7 @@ public class FactActivity2 extends BaseActivity implements View.OnClickListener,
                 }
 
                 if (!itemObj.isNull("v")) {
-                    int v = itemObj.getInt("v");
+                    double v = itemObj.getDouble("v");
                     TextOptions options = new TextOptions();
                     options.position(new LatLng(centerLat, centerLng));
                     options.fontColor(Color.BLACK);
@@ -617,25 +629,24 @@ public class FactActivity2 extends BaseActivity implements View.OnClickListener,
                 for (int i = 0; i < array.length(); i++) {
                     JSONObject itemObj = array.getJSONObject(i);
 
-//					JSONObject properties = itemObj.getJSONObject("properties");
-//					String name = properties.getString("name");
-//						JSONArray cp = properties.getJSONArray("cp");
-//						for (int m = 0; m < cp.length(); m++) {
-//							double lat = cp.getDouble(1);
-//							double lng = cp.getDouble(0);
-//
-//							LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//							View view = inflater.inflate(R.layout.rainfall_fact_marker_view2, null);
-//							TextView tvName = (TextView) view.findViewById(R.id.tvName);
-//							if (!TextUtils.isEmpty(name)) {
-//								tvName.setText(name);
-//							}
-//							MarkerOptions options = new MarkerOptions();
-//							options.anchor(0.5f, 0.5f);
-//							options.position(new LatLng(lat, lng));
-//							options.icon(BitmapDescriptorFactory.fromView(view));
-//							aMap.addMarker(options);
-//						}
+					JSONObject properties = itemObj.getJSONObject("properties");
+					String name = properties.getString("name");
+                    if (name.contains("市")) {
+                        name = name.replace("市", "");
+                    }
+                    JSONArray cp = properties.getJSONArray("cp");
+                    for (int m = 0; m < cp.length(); m++) {
+                        double lat = cp.getDouble(1);
+                        double lng = cp.getDouble(0);
+                        TextOptions options = new TextOptions();
+                        options.position(new LatLng(lat, lng));
+                        options.fontColor(Color.BLACK);
+                        options.fontSize(20);
+                        options.text(name);
+                        options.backgroundColor(Color.TRANSPARENT);
+                        Text text = aMap.addText(options);
+                        cityTexts.add(text);
+                    }
 
                     JSONObject geometry = itemObj.getJSONObject("geometry");
                     JSONArray coordinates = geometry.getJSONArray("coordinates");

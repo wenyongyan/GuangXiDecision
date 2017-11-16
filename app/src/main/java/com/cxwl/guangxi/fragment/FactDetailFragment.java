@@ -57,7 +57,7 @@ public class FactDetailFragment extends Fragment{
 				FactRainView rainView = new FactRainView(getActivity());
 				rainView.setData(dataList);
 				llContainer1.removeAllViews();
-				int viewWidth = 0;
+				int viewWidth;
 				if (dataList.size() <= 25) {
 					viewWidth = dm.widthPixels*2;
 				}else {
@@ -68,7 +68,7 @@ public class FactDetailFragment extends Fragment{
 				FactTempView rainView = new FactTempView(getActivity());
 				rainView.setData(dataList);
 				llContainer1.removeAllViews();
-				int viewWidth = 0;
+				int viewWidth;
 				if (dataList.size() <= 25) {
 					viewWidth = dm.widthPixels*2;
 				}else {
@@ -79,7 +79,7 @@ public class FactDetailFragment extends Fragment{
 				FactWindView rainView = new FactWindView(getActivity());
 				rainView.setData(dataList);
 				llContainer1.removeAllViews();
-				int viewWidth = 0;
+				int viewWidth;
 				if (dataList.size() <= 25) {
 					viewWidth = dm.widthPixels*2;
 				}else {

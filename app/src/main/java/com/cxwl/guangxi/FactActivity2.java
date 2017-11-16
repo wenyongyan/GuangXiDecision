@@ -566,7 +566,7 @@ public class FactActivity2 extends BaseActivity implements View.OnClickListener,
                     String[] points = p.split(";");
                     PolygonOptions polygonOption = new PolygonOptions();
                     polygonOption.fillColor(Color.argb(a, r, g, b));
-                    polygonOption.strokeColor(Color.BLACK);
+                    polygonOption.strokeColor(0xffd9d9d9);
                     polygonOption.strokeWidth(1);
                     for (int j = 0; j < points.length; j++) {
                         String[] value = points[j].split(",");
@@ -642,7 +642,7 @@ public class FactActivity2 extends BaseActivity implements View.OnClickListener,
                     for (int m = 0; m < coordinates.length(); m++) {
                         JSONArray array2 = coordinates.getJSONArray(m);
                         PolylineOptions polylineOption = new PolylineOptions();
-                        polylineOption.width(1).color(0xfff0eff5);
+                        polylineOption.width(1).color(0xffd9d9d9);
                         for (int j = 0; j < array2.length(); j++) {
                             JSONArray itemArray = array2.getJSONArray(j);
                             double lng = itemArray.getDouble(0);

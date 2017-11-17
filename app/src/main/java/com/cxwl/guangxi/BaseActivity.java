@@ -17,11 +17,11 @@ public class BaseActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setTranslucentStatus();
 	}
-	
+
 	/**
 	 * 设置状态栏背景状态
 	 */
-	@SuppressLint("InlinedApi") 
+	@SuppressLint("InlinedApi")
 	private void setTranslucentStatus() {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 			Window win = getWindow();

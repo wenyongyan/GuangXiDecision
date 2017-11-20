@@ -386,6 +386,9 @@ public class FactActivity2 extends BaseActivity implements View.OnClickListener,
                                         if (!itemObj.isNull("area")) {
                                             dto.area = itemObj.getString("area");
                                         }
+                                        if (!itemObj.isNull("area1")) {
+                                            dto.area1 = itemObj.getString("area1");
+                                        }
                                         if (!itemObj.isNull("val")) {
                                             dto.val = itemObj.getDouble("val");
                                         }

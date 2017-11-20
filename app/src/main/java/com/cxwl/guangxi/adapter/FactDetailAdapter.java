@@ -73,8 +73,8 @@ public class FactDetailAdapter extends BaseAdapter{
 			mHolder.tvStationName.setText(dto.stationName);
 		}
 		
-		if (!TextUtils.isEmpty(dto.area)) {
-			mHolder.tvArea.setText(dto.area);
+		if (!TextUtils.isEmpty(dto.area1)) {
+			mHolder.tvArea.setText(dto.area1);
 		}
 		
 		mHolder.tvValue.setText(dto.val+"");

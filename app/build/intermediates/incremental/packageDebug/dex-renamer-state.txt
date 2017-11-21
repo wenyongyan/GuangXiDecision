@@ -1,7 +1,0 @@
-#Thu Nov 16 16:19:45 CST 2017
-base.0=/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_222120f576662c3d44f50ef1e0e79e5f5cd11b20
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d97856853cdfacbe83968918f12c802edfd63d8d/classes.dex
-base.1=/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d97856853cdfacbe83968918f12c802edfd63d8d
-file.0=/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_222120f576662c3d44f50ef1e0e79e5f5cd11b20/classes.dex

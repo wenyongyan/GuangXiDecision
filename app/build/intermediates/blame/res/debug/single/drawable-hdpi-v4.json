@@ -1,75 +1,59 @@
 [
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_high_gray.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_high_gray.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/btn_login_press.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/btn_login_press.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day19_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day19_mini.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_arrow.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_arrow.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_level5.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_level5.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day16_mini.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day16_mini.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_influnce.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_influnce.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_spinner_mtrl_am_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_setting.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_setting.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_low_normal.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_high.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_high.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_warning_map.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_warning_map.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_high.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_high.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/arrow_up.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/arrow_up.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_pdf.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_pdf.png"
-    },
-    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_000.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day01_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day01_mini.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_delete_black.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_delete_black.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_login.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_login.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_icon.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_icon.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_longpressed_holo.9.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_longpressed_holo.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_tab_indicator_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_marker_pressure.png",
@@ -84,44 +68,40 @@
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day08_mini.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_warning_list.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_warning_list.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_point_pressure.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_point_pressure.png"
-    },
-    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_focused_holo.9.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_focused_holo.9.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_triangle_top_select.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_triangle_top_select.png"
     },
     {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day02_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day02_mini.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_typhoon_list.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_typhoon_list.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_pressed_holo_light.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_pressed_holo_light.9.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day15_mini.png",
@@ -130,18 +110,6 @@
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_level4.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_level4.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_marker_pressure_bottom.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_pressure_bottom.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_no_pic.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_no_pic.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/night13_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/night13_mini.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_wendu.png",
@@ -156,48 +124,68 @@
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_black_36dp.png"
     },
     {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_marker_temp.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_temp.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day53_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day53_mini.png"
+    },
+    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_dark.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_back.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_back.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bg_welcome.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/bg_welcome.png"
     },
     {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_arrow_black_down.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_arrow_black_down.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/btn_register2_press.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/btn_register2_press.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_low_pressed.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_arrow_black_down.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_arrow_black_down.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_arrow_black_right.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_arrow_black_right.png"
-    },
-    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_share_mtrl_alpha.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_pdf.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_pdf.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_015.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
     {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day09_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day09_mini.png"
-    },
-    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day31_mini.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day31_mini.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_sequnce_blue.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_sequnce_blue.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day09_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day09_mini.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_low_pressed.9.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day29_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day29_mini.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/night03_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/night03_mini.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_normal_pressed.9.png",
@@ -208,20 +196,36 @@
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_play.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_logo.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_logo.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/guide2.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/guide2.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_next_page.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_next_page.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day29_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day29_mini.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_typhoon_play.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_typhoon_play.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_point_wind.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_point_wind.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day30_mini.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day30_mini.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/arrow_down.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/arrow_down.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/night00_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/night00_mini.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png",
@@ -232,44 +236,56 @@
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day18_mini.png"
     },
     {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_feedback.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_feedback.png"
+    },
+    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day03_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day03_mini.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_search.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_search.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_level3.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_level3.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_light.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_light.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_level5.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_level5.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_red_circle.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_red_circle.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_48dp.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_black_48dp.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_pre_page.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_pre_page.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_delete_black.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_delete_black.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_user.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_user.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_point_temp.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_point_temp.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day00_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day00_mini.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_48dp.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_black_48dp.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day13_mini.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day13_mini.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_loading.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_loading.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_pause.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_pause.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_arrow_white_down.png",
@@ -280,12 +296,12 @@
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/btn_login.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_setting.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_setting.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_sequnce_blue.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_sequnce_blue.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day10_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day10_mini.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/btn_register2.png",
@@ -304,88 +320,68 @@
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_map_legend.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/btn_login_press.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/btn_login_press.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day09_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day09_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/btn_register2_press.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/btn_register2_press.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day31_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day31_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/night03_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/night03_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_marker_wind_bottom.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_wind_bottom.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day20_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day20_mini.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/guide2.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/guide2.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_location.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_location.png"
     },
     {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day08_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day08_mini.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_spinner_mtrl_am_alpha.9.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day01_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day01_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day16_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day16_mini.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/night13_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/night13_mini.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_warning_list.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_warning_list.png"
     },
     {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day05_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day05_mini.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_marker_wind.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_wind.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_16dp.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_015.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_015.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_location_white.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_location_white.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bg_warning_detail.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/bg_warning_detail.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_level2.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_level2.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_sequnce_gray.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_sequnce_gray.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_intro.png",
@@ -396,20 +392,16 @@
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_pressure_bottom.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bg_warning_detail.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/bg_warning_detail.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_dark.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day30_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day30_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_36dp.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_black_36dp.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_arrow_white_top.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_arrow_white_top.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bg_main_item.png",
@@ -436,12 +428,24 @@
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_wind_bottom.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day07_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day07_mini.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_low_normal.9.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day19_mini.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day19_mini.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_influnce.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_influnce.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/guide3.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/guide3.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day06_mini.png",
@@ -452,20 +456,24 @@
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_pressed_holo_light.9.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_light.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_dark.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_marker_temp_bottom.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_temp_bottom.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_triangle_top_select.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_triangle_top_select.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_play.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_play.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/empty.png",
@@ -484,10 +492,6 @@
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_level2.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png"
-    },
-    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_high_gray.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_high_gray.png"
     },
@@ -500,20 +504,16 @@
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_remove.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_marker_temp.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_temp.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_marker_pressure.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_pressure.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_user.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_user.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_search_bg.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_search_bg.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_tab_indicator_mtrl_alpha.9.png",
@@ -524,16 +524,16 @@
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day14_mini.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_back.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_back.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_point_pressure.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_point_pressure.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_loading_black.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_loading_black.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day11_mini.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day11_mini.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png",
@@ -542,10 +542,6 @@
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_feedback.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_feedback.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_activated_mtrl_alpha.9.png",
@@ -564,628 +560,20 @@
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_warning_map.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_warning_map.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_location_white.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_location_white.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_typhoon_pause.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_typhoon_pause.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png"
-    },
-    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day07_mini.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day07_mini.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_version.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_version.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_point_temp.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_point_temp.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_light.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_light.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_level1.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_level1.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day15_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day15_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day02_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day02_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_arrow.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_arrow.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_seekbar_point.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_seekbar_point.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_remove.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_remove.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_normal_pressed.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_marker_temp_bottom.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_temp_bottom.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_download_code.jpg",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_download_code.jpg"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_longpressed_holo.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_longpressed_holo.9.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_pre_page.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_pre_page.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/btn_login_press.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/btn_login_press.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_arrow.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_arrow.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_dark.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_level5.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_level5.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_login.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_login.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_search_bg.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_search_bg.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_location.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_location.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day01_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day01_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_login.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_login.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_icon.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_icon.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_next_page.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_next_page.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day11_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day11_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day02_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day02_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_typhoon_list.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_typhoon_list.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_delete_white.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_delete_white.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notify_panel_notification_icon_bg.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day13_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day13_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_normal.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/notification_bg_normal.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/night00_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/night00_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_marker_temp.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_temp.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day53_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day53_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_back.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_back.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day20_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day20_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/btn_register2_press.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/btn_register2_press.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day04_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day04_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_pdf.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_pdf.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_activated_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day06_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day06_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_level6.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_level6.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_low_pressed.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day29_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day29_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/night03_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/night03_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/btn_login.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/btn_login.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_intro.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_intro.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day10_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day10_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_logo.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_logo.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/night01_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/night01_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_next_page.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_next_page.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_typhoon_play.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_typhoon_play.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_arrow_white_down.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_arrow_white_down.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_pause.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_pause.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day14_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day14_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_arrow_white_top.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_arrow_white_top.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_point_wind.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_point_wind.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/night00_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/night00_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/arrow_down.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/arrow_down.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day03_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day03_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_feedback.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_feedback.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day03_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day03_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/guide3.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/guide3.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_search.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_search.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_level3.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_level3.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_delete_black.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_delete_black.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bg_welcome.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/bg_welcome.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_sequnce_gray.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_sequnce_gray.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_point_temp.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_point_temp.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day00_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day00_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_48dp.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_black_48dp.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_pause.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_pause.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_pwd.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_pwd.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_sequnce_blue.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_sequnce_blue.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day10_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day10_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_low.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_low.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day20_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day20_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/guide2.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/guide2.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_level3.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_level3.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_dark.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_typhoon_pause.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_typhoon_pause.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_typhoon_play.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_typhoon_play.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_spinner_mtrl_am_alpha.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_share_mtrl_alpha.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/night13_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/night13_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day53_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day53_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day05_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day05_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_marker_wind.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_wind.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_16dp.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day00_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day00_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_sequnce_gray.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_sequnce_gray.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_dark.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bg_warning_detail.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/bg_warning_detail.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_arrow_white_top.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_arrow_white_top.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_icon.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_icon.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_low_normal.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_influnce.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_influnce.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/guide3.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/guide3.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_light.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_light.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_dark.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_light.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_light.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day17_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day17_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_search.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_search.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/btn_register2.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/btn_register2.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_point_wind.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_point_wind.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_download_code.jpg",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_download_code.jpg"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_marker_wind.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_wind.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_light.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_light.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_search_bg.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_search_bg.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_high.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_high.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_point_pressure.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_point_pressure.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day11_mini.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day11_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_seekbar_point.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_seekbar_point.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_16dp.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_arrow_black_down.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_arrow_black_down.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_focused_holo.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_focused_holo.9.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day05_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day05_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bg_main_item.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/bg_main_item.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day18_mini.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/day18_mini.png"
-    },
-    {
-        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_location_white.png",
-        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_location_white.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_logo.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_logo.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_wendu.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_wendu.png"
-    },
-    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_loading_black.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_loading_black.png"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/guide1.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/guide1.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notify_panel_notification_icon_bg.png",
@@ -1196,12 +584,12 @@
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_pwd.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/typhoon_level4.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/typhoon_level4.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_seekbar_point.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_seekbar_point.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_typhoon_list.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_typhoon_list.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_download_code.jpg",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_download_code.jpg"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/day04_mini.png",
@@ -1216,19 +604,23 @@
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/day17_mini.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png"
-    },
-    {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_low.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_low.png"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_map_legend.png",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_map_legend.png"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_marker_rain.png",
         "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_marker_rain.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iv_pre_page.png",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/drawable-hdpi/iv_pre_page.png"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/drawable-hdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
     }
 ]

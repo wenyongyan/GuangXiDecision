@@ -1,31 +1,5 @@
 [
     {
-        "outputFile": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endLine": 6,
-                    "endColumn": 13,
-                    "endOffset": 327
-                },
-                "from": {
-                    "file": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/values-hdpi-v4/values-hdpi-v4.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endLine": 6,
-                        "endColumn": 13,
-                        "endOffset": 327
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
         "map": [
             {

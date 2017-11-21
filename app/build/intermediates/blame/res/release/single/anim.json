@@ -1,70 +1,70 @@
 [
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/out_downtoup.xml",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/anim/out_downtoup.xml"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_slide_out_top.xml",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_slide_out_top.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/round_animation.xml",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/anim/round_animation.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_slide_in_top.xml",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_slide_in_top.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_fade_out.xml",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_fade_out.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_fade_in.xml",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_fade_in.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/out_uptodown.xml",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/anim/out_uptodown.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_popup_enter.xml",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_popup_enter.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_popup_exit.xml",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_popup_exit.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/anim_loading_white.xml",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/anim/anim_loading_white.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/anim_loading_black.xml",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/anim/anim_loading_black.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/in_downtoup.xml",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/anim/in_downtoup.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_slide_out_bottom.xml",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_slide_out_bottom.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/in_uptodown.xml",
-        "source": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/src/main/res/anim/in_uptodown.xml"
-    },
-    {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_grow_fade_in_from_bottom.xml",
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_grow_fade_in_from_bottom.xml",
         "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/Users/shawn/Downloads/GETUI_ANDROID_HW_XM_MZ_SUPPORT(2.11.1.0)-20170906/GETUI_ANDROID_SDK/Demo工程/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_slide_in_bottom.xml",
-        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_slide_in_bottom.xml"
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_popup_enter.xml",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_fade_out.xml",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/anim_loading_white.xml",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/anim/anim_loading_white.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_slide_out_top.xml",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/anim_loading_black.xml",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/anim/anim_loading_black.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_fade_in.xml",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/out_uptodown.xml",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/anim/out_uptodown.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/in_downtoup.xml",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/anim/in_downtoup.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_slide_in_top.xml",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/abc_popup_exit.xml",
+        "source": "/Users/shawn/.android/build-cache/c927dcc2c29b04a7382d20241212bdbf42ddbdd0/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/round_animation.xml",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/anim/round_animation.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/in_uptodown.xml",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/anim/in_uptodown.xml"
+    },
+    {
+        "merged": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/build/intermediates/res/merged/release/anim/out_downtoup.xml",
+        "source": "/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/src/main/res/anim/out_downtoup.xml"
     }
 ]

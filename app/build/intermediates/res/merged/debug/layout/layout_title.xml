@@ -55,6 +55,7 @@
             android:id="@+id/ivControl"
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:layout_marginRight="10dp"
             android:src="@drawable/iv_warning_list"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"/>

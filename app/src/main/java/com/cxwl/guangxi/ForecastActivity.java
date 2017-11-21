@@ -76,7 +76,7 @@ public class ForecastActivity extends BaseActivity implements OnClickListener{
 	private HorizontalScrollView hScrollView2 = null;
 	private RelativeLayout reContent = null;
 	private int width = 0;
-	private List<WeatherDto> weeklyList = new ArrayList<WeatherDto>();
+	private List<WeatherDto> weeklyList = new ArrayList<>();
 	private SimpleDateFormat sdf2 = new SimpleDateFormat("HH");
 	private SimpleDateFormat sdf3 = new SimpleDateFormat("MM月dd日");
 	private SimpleDateFormat sdf4 = new SimpleDateFormat("MM月dd日 HH:mm");
@@ -88,7 +88,7 @@ public class ForecastActivity extends BaseActivity implements OnClickListener{
 	private TextView tvDetail = null;
 	private TextView tvKnow = null;
 	private ProgressBar proDetail = null;
-	private List<WarningDto> warningList = new ArrayList<WarningDto>();//预警列表
+	private List<WarningDto> warningList = new ArrayList<>();//预警列表
 	private boolean isReplace = false;//判断实况温度是否大于当天最高气温
 	
 	@Override
@@ -253,7 +253,7 @@ public class ForecastActivity extends BaseActivity implements OnClickListener{
 					//逐小时预报信息
 					try {
 						JSONArray hourlyArray = content.getHourlyFineForecast2();
-						List<WeatherDto> hourlyList = new ArrayList<WeatherDto>();
+						List<WeatherDto> hourlyList = new ArrayList<>();
 						for (int i = 0; i < hourlyArray.length(); i++) {
 							JSONObject itemObj = hourlyArray.getJSONObject(i);
 							WeatherDto dto = new WeatherDto();

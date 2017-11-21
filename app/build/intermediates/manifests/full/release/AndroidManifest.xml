@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cxwl.guangxi"
-    android:versionCode="22"
-    android:versionName="1.1.1" >
+    android:versionCode="24"
+    android:versionName="1.1.11" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -109,6 +109,15 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.cxwl.guangxi.FactActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cxwl.guangxi.FactActivity2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cxwl.guangxi.FactDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cxwl.guangxi.FactDetailChartActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.cxwl.guangxi.WeatherActivity"

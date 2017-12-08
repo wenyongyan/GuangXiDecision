@@ -59,7 +59,7 @@ public class CommonUtil {
      */  
     public static float dip2px(Context context, float dpValue) {  
         final float scale = context.getResources().getDisplayMetrics().density;  
-        return (float) (dpValue * scale);  
+        return dpValue * scale;
     }  
   
     /** 
@@ -67,7 +67,7 @@ public class CommonUtil {
      */  
     public static float px2dip(Context context, float pxValue) {  
         final float scale = context.getResources().getDisplayMetrics().density;  
-        return (float) (pxValue / scale);  
+        return pxValue / scale;
     } 
     
     /**
@@ -96,8 +96,6 @@ public class CommonUtil {
 	
 	/**
 	 * 解决ScrollView与GridView共存的问题
-	 * 
-	 * @param listView
 	 */
 	public static void setGridViewHeightBasedOnChildren(GridView gridView) {
 		ListAdapter listAdapter = gridView.getAdapter();
@@ -126,79 +124,6 @@ public class CommonUtil {
 		params.height = totalHeight + (gridView.getVerticalSpacing() * (listAdapter.getCount()/column - 1));
 		((MarginLayoutParams) params).setMargins(0, 0, 0, 0);
 		gridView.setLayoutParams(params);
-	}
-	
-	/**
-	 * 根据当前时间获取星期几
-	 * @param context
-	 * @param i (+1为后一天，-1为前一天，0表示当天)
-	 * @return
-	 */
-	public static String getWeek(Context context, int i) {
-		String week = null;
-		
-		Calendar c = Calendar.getInstance();
-		int day = c.get(Calendar.DATE);
-		c.set(Calendar.DATE, day+i);
-		
-		if (c.get(Calendar.DAY_OF_WEEK) == 1) {
-			week = context.getString(R.string.seven);
-		}else if (c.get(Calendar.DAY_OF_WEEK) == 2) {
-			week = context.getString(R.string.one);
-		}else if (c.get(Calendar.DAY_OF_WEEK) == 3) {
-			week = context.getString(R.string.two);
-		}else if (c.get(Calendar.DAY_OF_WEEK) == 4) {
-			week = context.getString(R.string.three);
-		}else if (c.get(Calendar.DAY_OF_WEEK) == 5) {
-			week = context.getString(R.string.four);
-		}else if (c.get(Calendar.DAY_OF_WEEK) == 6) {
-			week = context.getString(R.string.five);
-		}else if (c.get(Calendar.DAY_OF_WEEK) == 7) {
-			week = context.getString(R.string.six);
-		}
-		
-		return context.getString(R.string.week)+week;
-	}
-	
-	/**
-	 * 根据当前时间获取日期，格式为MM/dd
-	 * @param i (+1为后一天，-1为前一天，0表示当天)
-	 * @return
-	 */
-	public static String getDate(int i) {
-		String date = null;
-		
-		Calendar c = Calendar.getInstance();
-		int day = c.get(Calendar.DATE);
-		c.set(Calendar.DATE, day+i);
-		
-		if (c.get(Calendar.MONTH) == 0) {
-			date = "01";
-		}else if (c.get(Calendar.MONTH) == 1) {
-			date = "02";
-		}else if (c.get(Calendar.MONTH) == 2) {
-			date = "03";
-		}else if (c.get(Calendar.MONTH) == 3) {
-			date = "04";
-		}else if (c.get(Calendar.MONTH) == 4) {
-			date = "05";
-		}else if (c.get(Calendar.MONTH) == 5) {
-			date = "06";
-		}else if (c.get(Calendar.MONTH) == 6) {
-			date = "07";
-		}else if (c.get(Calendar.MONTH) == 7) {
-			date = "08";
-		}else if (c.get(Calendar.MONTH) == 8) {
-			date = "09";
-		}else if (c.get(Calendar.MONTH) == 9) {
-			date = "10";
-		}else if (c.get(Calendar.MONTH) == 10) {
-			date = "11";
-		}else if (c.get(Calendar.MONTH) == 11) {
-			date = "12";
-		}
-		
-		return date+"/"+c.get(Calendar.DAY_OF_MONTH);
 	}
 	
 	/**
@@ -243,7 +168,7 @@ public class CommonUtil {
 		}
 		return image;
 	}
-	
+
 	/**
 	 * 获取圆角图片
 	 * @param bitmap
@@ -271,7 +196,7 @@ public class CommonUtil {
 			return bitmap;
 		}
 	}
-	
+
 	/**
 	 * 隐藏虚拟键盘
 	 * @param editText 输入框
@@ -281,10 +206,10 @@ public class CommonUtil {
 		InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
 	}
-	
+
 	/**
 	 * 转换图片成圆形
-	 * 
+	 *
 	 * @param bitmap
 	 *            传入Bitmap对象
 	 * @return
@@ -336,9 +261,9 @@ public class CommonUtil {
 		canvas.drawBitmap(bitmap, src, dst, paint);
 		return output;
 	}
-	
+
 	/**
-     * 获取网落图片资源 
+     * 获取网落图片资源
      * @param url
      * @return
      */
@@ -370,10 +295,9 @@ public class CommonUtil {
 		}
 		return bitmap;
 	}
-	
+
 	/**
 	 * 转换图片成六边形
-	 * @param scaleBitmapImage
 	 * @return
 	 */
 	public static Bitmap getHexagonShape(Bitmap bitmap) {
@@ -385,7 +309,7 @@ public class CommonUtil {
 		float triangleHeight = (float) (Math.sqrt(3) * radius / 2);
 		float centerX = targetWidth / 2;
 		float centerY = targetHeight / 2;
-		
+
 		Canvas canvas = new Canvas(targetBitmap);
 		canvas.setDrawFilter(new PaintFlagsDrawFilter(0, Paint.FILTER_BITMAP_FLAG|Paint.ANTI_ALIAS_FLAG));
 		Path path = new Path();
@@ -418,7 +342,7 @@ public class CommonUtil {
 
 		return bitmap;
 	}
-	
+
 	/**
 	 * 根据颜色值判断颜色
 	 * @param colorType
@@ -511,14 +435,15 @@ public class CommonUtil {
 	 * 绘制西安边界
 	 * @param context
 	 * @param aMap
+	 * @param fileName json文件名称，例如guangxi.json
 	 */
-	public static void drawDistrict(Context context, AMap aMap) {
-		String result = CommonUtil.getFromAssets(context, "xian.json");
+	public static void drawDistrict(Context context, AMap aMap, String fileName) {
+		String result = CommonUtil.getFromAssets(context, fileName);
 		if (!TextUtils.isEmpty(result)) {
 			try {
 				JSONObject obj = new JSONObject(result);
 				JSONArray array = obj.getJSONArray("geometries");
-				List<PolylineOptions> list = new ArrayList<PolylineOptions>();
+				List<PolylineOptions> list = new ArrayList<>();
 				list.clear();
 				for (int i = 0; i < array.length(); i++) {
 					JSONObject itemObj = array.getJSONObject(i);
@@ -580,7 +505,6 @@ public class CommonUtil {
 	
 	/**
      * 根据角度获取风向
-     * @param code
      * @return
      */
     public static String getWindDir(String degree) {

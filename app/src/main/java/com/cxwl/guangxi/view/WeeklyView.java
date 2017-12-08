@@ -29,7 +29,7 @@ import com.cxwl.guangxi.utils.WeatherUtil;
 public class WeeklyView extends View{
 	
 	private Context mContext = null;
-	private List<WeatherDto> tempList = new ArrayList<WeatherDto>();
+	private List<WeatherDto> tempList = new ArrayList<>();
 	private int maxTemp = 0;//最高温度
 	private int minTemp = 0;//最低温度
 	private Paint lineP = null;//画线画笔

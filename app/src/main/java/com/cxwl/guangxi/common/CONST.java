@@ -61,6 +61,7 @@ public class CONST {
 		public static final String userName = "uName";
 		public static final String passWord = "pwd";
 		public static final String area = "area";
+		public static final String areaid = "areaid";
 		public static final String department = "department";
 	}
 	
@@ -68,6 +69,7 @@ public class CONST {
 	public static String USERNAME = null;//用户名
 	public static String PASSWORD = null;//用户密码
 	public static String AREA = null;//关注区域
+	public static String AREAID = null;//关注区域
 	public static String DEPARTMENT = null;//单位
 	
 	//预警颜色对应规则

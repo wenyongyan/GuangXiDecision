@@ -12,7 +12,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
-import com.cxwl.guangxi.LoginActivity;
+import com.cxwl.guangxi.activity.LoginActivity;
 import com.cxwl.guangxi.R;
 import com.cxwl.guangxi.common.CONST;
 import com.cxwl.guangxi.utils.CommonUtil;

@@ -1,9 +1,5 @@
 package com.cxwl.guangxi.adapter;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import net.tsz.afinal.FinalBitmap;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -17,11 +13,16 @@ import android.widget.TextView;
 import com.cxwl.guangxi.R;
 import com.cxwl.guangxi.common.ColumnData;
 
+import net.tsz.afinal.FinalBitmap;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainAdapter extends BaseAdapter{
 	
 	private Context mContext = null;
 	private LayoutInflater mInflater = null;
-	private List<ColumnData> mArrayList = new ArrayList<ColumnData>();
+	private List<ColumnData> mArrayList = new ArrayList<>();
 	private int height = 0;
 	
 	private final class ViewHolder{

@@ -5,7 +5,19 @@
     android:background="@color/white"
     android:orientation="vertical" >
 
+    <TextView
+        android:visibility="gone"
+        android:layout_margin="10dp"
+        android:id="@+id/tvSelect"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:background="@drawable/corner_border"
+        android:textColor="@color/title_bg"
+        android:textSize="@dimen/level_3"/>
+
     <ListView
+        android:layout_below="@+id/tvSelect"
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,5 +27,14 @@
         android:listSelector="@color/transparent"
         android:overScrollMode="never"
         android:scrollbars="none" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvPrompt"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color3"
+        android:textSize="@dimen/level_3"/>
 
 </RelativeLayout>

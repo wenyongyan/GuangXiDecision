@@ -37,7 +37,7 @@
         <service android:name="com.amap.api.location.APSService" />
         
         <activity
-            android:name="com.cxwl.guangxi.WelcomeActivity"
+            android:name="com.cxwl.guangxi.activity.WelcomeActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
             <intent-filter>
@@ -48,99 +48,103 @@
         </activity>
         
         <activity 
-            android:name="com.cxwl.guangxi.GuideActivity"
+            android:name="com.cxwl.guangxi.activity.GuideActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.LoginActivity"
+            android:name="com.cxwl.guangxi.activity.LoginActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.RegisterActivity"
+            android:name="com.cxwl.guangxi.activity.RegisterActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.MainActivity"
+            android:name="com.cxwl.guangxi.activity.MainActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.RadarActivity"
+            android:name="com.cxwl.guangxi.activity.RadarActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.CityActivity"
+            android:name="com.cxwl.guangxi.activity.CityActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.FeedbackActivity"
+            android:name="com.cxwl.guangxi.activity.FeedbackActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.UrlActivity"
+            android:name="com.cxwl.guangxi.activity.UrlActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.NewsActivity"
+            android:name="com.cxwl.guangxi.activity.NewsActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.ForecastActivity"
+            android:name="com.cxwl.guangxi.activity.ForecastActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.WarningActivity"
+            android:name="com.cxwl.guangxi.activity.WarningActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.WarningDetailActivity"
+            android:name="com.cxwl.guangxi.activity.WarningDetailActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.IntroduceActivity"
+            android:name="com.cxwl.guangxi.activity.IntroduceActivity"
             android:screenOrientation="portrait" />
         
         <activity
-            android:name="com.cxwl.guangxi.PDFActivity"
+            android:name="com.cxwl.guangxi.activity.PDFActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.HeadWarningActivity"
+            android:name="com.cxwl.guangxi.activity.HeadWarningActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.ServiceMaterialActivity"
+            android:name="com.cxwl.guangxi.activity.ServiceMaterialActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.TyphoonRouteActivity"
+            android:name="com.cxwl.guangxi.activity.TyphoonRouteActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.FactActivity"
+            android:name="com.cxwl.guangxi.activity.FactActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.cxwl.guangxi.FactActivity2"
+            android:name="com.cxwl.guangxi.activity.FactProActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.cxwl.guangxi.FactDetailActivity"
+            android:name="com.cxwl.guangxi.activity.FactDetailActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.cxwl.guangxi.FactDetailChartActivity"
+            android:name="com.cxwl.guangxi.activity.FactCityActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.cxwl.guangxi.activity.FactDetailChartActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.WeatherActivity"
+            android:name="com.cxwl.guangxi.activity.WeatherActivity"
             android:screenOrientation="portrait" />
         
         <activity 
-            android:name="com.cxwl.guangxi.ImageZoomActivity"
+            android:name="com.cxwl.guangxi.activity.ImageZoomActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
         

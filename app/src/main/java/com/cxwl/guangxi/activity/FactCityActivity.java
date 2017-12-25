@@ -839,7 +839,7 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 						for (int k = 0; k < array1.length(); k++) {
 							JSONArray array2 = array1.getJSONArray(k);
 							PolylineOptions polylineOption = new PolylineOptions();
-							polylineOption.width(1).color(0xffd9d9d9);
+							polylineOption.width(2).color(0xffd9d9d9);
 							for (int j = 0; j < array2.length(); j++) {
 								JSONArray itemArray = array2.getJSONArray(j);
 								double lng = itemArray.getDouble(0);

@@ -852,7 +852,7 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
                     for (int m = 0; m < coordinates.length(); m++) {
                         JSONArray array2 = coordinates.getJSONArray(m);
                         PolylineOptions polylineOption = new PolylineOptions();
-                        polylineOption.width(1).color(0xffd9d9d9);
+                        polylineOption.width(2).color(0xffd9d9d9);
                         for (int j = 0; j < array2.length(); j++) {
                             JSONArray itemArray = array2.getJSONArray(j);
                             double lng = itemArray.getDouble(0);

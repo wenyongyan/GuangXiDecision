@@ -138,8 +138,8 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
         LatLngBounds bounds = new LatLngBounds.Builder()
 //		.include(new LatLng(57.9079, 71.9282))
 //		.include(new LatLng(3.9079, 134.8656))
-                .include(new LatLng(1, 66))
-                .include(new LatLng(60, 153))
+                .include(new LatLng(1, -179))
+                .include(new LatLng(89, 179))
                 .build();
         aMap.addGroundOverlay(new GroundOverlayOptions()
                 .anchor(0.5f, 0.5f)

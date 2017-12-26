@@ -888,7 +888,7 @@ public class MainActivity extends BaseActivity implements OnClickListener, AMapL
 							intent = new Intent(mContext, FactCityActivity.class);
 						}
 						intent.putExtra("adCode", CONST.AREAID);
-						intent.putExtra(CONST.ACTIVITY_NAME, dto.name);
+						intent.putExtra(CONST.COLUMN_ID, dto.id);
 						intent.putExtra(CONST.WEB_URL, dto.dataUrl);
 						intent.putExtra(CONST.COLUMN_ID, dto.id);
 						Bundle bundle = new Bundle();
@@ -902,6 +902,7 @@ public class MainActivity extends BaseActivity implements OnClickListener, AMapL
 							intent = new Intent(mContext, FactCityActivity.class);
 						}
 						intent.putExtra("adCode", CONST.AREAID);
+						intent.putExtra(CONST.COLUMN_ID, dto.id);
 						intent.putExtra(CONST.ACTIVITY_NAME, dto.name);
 						intent.putExtra(CONST.WEB_URL, dto.dataUrl);
 						intent.putExtra(CONST.COLUMN_ID, dto.id);
@@ -916,6 +917,7 @@ public class MainActivity extends BaseActivity implements OnClickListener, AMapL
 							intent = new Intent(mContext, FactCityActivity.class);
 						}
 						intent.putExtra("adCode", CONST.AREAID);
+						intent.putExtra(CONST.COLUMN_ID, dto.id);
 						intent.putExtra(CONST.ACTIVITY_NAME, dto.name);
 						intent.putExtra(CONST.WEB_URL, dto.dataUrl);
 						intent.putExtra(CONST.COLUMN_ID, dto.id);

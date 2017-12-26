@@ -1,16 +1,5 @@
 package com.cxwl.guangxi.activity;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-
-import org.apache.http.NameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -65,6 +54,17 @@ import com.cxwl.guangxi.dto.WarningDto;
 import com.cxwl.guangxi.manager.DBManager;
 import com.cxwl.guangxi.utils.CommonUtil;
 import com.cxwl.guangxi.utils.CustomHttpClient;
+
+import org.apache.http.NameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * 预警
@@ -128,7 +128,7 @@ OnMarkerClickListener, InfoWindowAdapter, OnCameraChangeListener, OnDistrictSear
 			tvTitle.setText(title);
 		}
 		
-		drawDistrict("广西");
+		drawDistrict("450000");
 		
 		asyncQuery(warningUrl);
     }
@@ -140,7 +140,7 @@ OnMarkerClickListener, InfoWindowAdapter, OnCameraChangeListener, OnDistrictSear
 		DistrictSearch search = new DistrictSearch(mContext);
 		DistrictSearchQuery query = new DistrictSearchQuery();
 		query.setKeywords(keywords);//传入关键字
-//		query.setKeywordsLevel(DistrictSearchQuery.KEYWORDS_CITY);
+		query.setKeywordsLevel(DistrictSearchQuery.KEYWORDS_DISTRICT);
 		query.setShowBoundary(true);//是否返回边界值
 		search.setQuery(query);
 		search.setOnDistrictSearchListener(this);//绑定监听器
@@ -152,40 +152,31 @@ OnMarkerClickListener, InfoWindowAdapter, OnCameraChangeListener, OnDistrictSear
 		if (districtResult == null|| districtResult.getDistrict()==null) {
 			return;
 		}
-		
-		final DistrictItem item = districtResult.getDistrict().get(0);
-		if (item == null) {
-			return;
-		}
-		
-		new Thread() {
-			public void run() {
-				String[] polyStr = item.districtBoundary();
-				if (polyStr == null || polyStr.length == 0) {
-					return;
-				}
-				for (String str : polyStr) {
-					String[] lat = str.split(";");
-					PolylineOptions polylineOption = new PolylineOptions();
-					boolean isFirst=true;
-					LatLng firstLatLng=null;
-					for (String latstr : lat) {
-						String[] lats = latstr.split(",");
-						if(isFirst){
-							isFirst=false;
-							firstLatLng=new LatLng(Double.parseDouble(lats[1]), Double.parseDouble(lats[0]));
-						}
-						polylineOption.add(new LatLng(Double.parseDouble(lats[1]), Double.parseDouble(lats[0])));
-					}
-					if(firstLatLng!=null){
-						polylineOption.add(firstLatLng);
-					}
-					
-					polylineOption.width(8).color(getResources().getColor(R.color.title_bg));	 
-					aMap.addPolyline(polylineOption);
-				}
+		List<DistrictItem> districtItems = districtResult.getDistrict();
+		for (int i = 0; i < districtItems.size(); i++) {
+			DistrictItem item = districtResult.getDistrict().get(i);
+			if (item == null) {
+				return;
 			}
- 		}.start();
+			String[] polyStr = item.districtBoundary();
+			if (polyStr == null || polyStr.length == 0) {
+				return;
+			}
+
+			for (String str : polyStr) {
+				String[] lat = str.split(";");
+				PolylineOptions polylineOption = new PolylineOptions();
+
+				for (String latstr : lat) {
+					String[] lats = latstr.split(",");
+					polylineOption.add(new LatLng(Double.parseDouble(lats[1]), Double.parseDouble(lats[0])));
+				}
+
+				polylineOption.width(8).color(getResources().getColor(R.color.title_bg));
+				aMap.addPolyline(polylineOption);
+			}
+		}
+
 	}
 	
 	/**
@@ -219,7 +210,7 @@ OnMarkerClickListener, InfoWindowAdapter, OnCameraChangeListener, OnDistrictSear
 		}
 		
 		LatLng centerLatLng = new LatLng(CONST.centerLat, CONST.centerLng);
-		aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerLatLng, 6.3f));
+		aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerLatLng, 6.4f));
 		aMap.getUiSettings().setMyLocationButtonEnabled(false);// 设置默认定位按钮是否显示
 		aMap.getUiSettings().setZoomControlsEnabled(false);
 		aMap.getUiSettings().setRotateGesturesEnabled(false);

@@ -68,7 +68,28 @@ public class CommonUtil {
     public static float px2dip(Context context, float pxValue) {  
         final float scale = context.getResources().getDisplayMetrics().density;  
         return pxValue / scale;
-    } 
+    }
+
+	/**
+	 * 获取listview高度
+	 * @param listView
+	 */
+	public static int getListViewHeightBasedOnChildren(ListView listView) {
+		int height = 0;
+		ListAdapter listAdapter = listView.getAdapter();
+		if (listAdapter == null) {
+			return height;
+		}
+
+		int totalHeight = 0;
+		for (int i = 0; i < listAdapter.getCount(); i++) {
+			View listItem = listAdapter.getView(i, null, listView);
+			listItem.measure(0, 0);
+			totalHeight += listItem.getMeasuredHeight();
+		}
+		height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+		return height;
+	}
     
     /**
 	 * 解决ScrollView与ListView共存的问题

@@ -327,7 +327,7 @@ public class MainActivity extends BaseActivity implements OnClickListener, AMapL
 													Drawable drawable = getResources().getDrawable(R.drawable.phenomenon_drawable);
 													try {
 														long zao8 = sdf2.parse("06").getTime();
-														long wan8 = sdf2.parse("20").getTime();
+														long wan8 = sdf2.parse("18").getTime();
 														long current = sdf2.parse(sdf2.format(new Date())).getTime();
 														if (current >= zao8 && current < wan8) {
 															drawable = getResources().getDrawable(R.drawable.phenomenon_drawable);

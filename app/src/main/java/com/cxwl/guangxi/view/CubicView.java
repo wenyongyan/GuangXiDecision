@@ -216,7 +216,7 @@ public class CubicView extends View{
 			//绘制曲线上每个点的信息
 			try {
 				long zao8 = sdf2.parse("06").getTime();
-				long wan8 = sdf2.parse("20").getTime();
+				long wan8 = sdf2.parse("18").getTime();
 				long current = sdf2.parse(sdf2.format(sdf0.parse(tempList.get(i).hourlyTime))).getTime();
 				Bitmap lb = null;
 				if (current >= zao8 && current < wan8) {

@@ -409,7 +409,7 @@ InfoWindowAdapter, OnCameraChangeListener, OnDistrictSearchListener{
 		Drawable drawable = getResources().getDrawable(R.drawable.phenomenon_drawable);
 		try {
 			long zao8 = sdf3.parse("06").getTime();
-			long wan8 = sdf3.parse("20").getTime();
+			long wan8 = sdf3.parse("18").getTime();
 			long current = sdf3.parse(sdf3.format(new Date())).getTime();
 			if (current >= zao8 && current < wan8) {
 				drawable = getResources().getDrawable(R.drawable.phenomenon_drawable);

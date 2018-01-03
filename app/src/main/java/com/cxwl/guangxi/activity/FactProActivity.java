@@ -1,5 +1,7 @@
 package com.cxwl.guangxi.activity;
 
+import android.animation.IntEvaluator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,9 +13,13 @@ import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.TranslateAnimation;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -37,6 +43,7 @@ import com.amap.api.maps.model.Polyline;
 import com.amap.api.maps.model.PolylineOptions;
 import com.amap.api.maps.model.Text;
 import com.cxwl.guangxi.R;
+import com.cxwl.guangxi.adapter.FactDetailAdapter;
 import com.cxwl.guangxi.adapter.FactProAdapter;
 import com.cxwl.guangxi.common.CONST;
 import com.cxwl.guangxi.common.ColumnData;
@@ -68,6 +75,7 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
     private Context mContext = null;
     private LinearLayout llBack = null;
     private TextView tvTitle = null;
+    private TextView tvControl = null;
     private LinearLayout llContainer = null;
     private LinearLayout llContainer1 = null;
     private int width = 0;
@@ -80,7 +88,6 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
     private FactProAdapter factAdapter = null;
     private List<FactDto> factList = new ArrayList<>();
     private List<FactDto> realDatas = new ArrayList<>();
-    private LinearLayout listTitle = null;
     private TextView tv1, tv2, tv3;
     private TextView tvLayerName, tvIntro, tvToast;//图层名称
     private ImageView ivChart = null;//图例
@@ -92,6 +99,17 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
     private List<Marker> autoStations = new ArrayList<>();//自动站
     private List<FactDto> cityInfos = new ArrayList<>();//城市信息
     private ColumnData data = null;
+    private LinearLayout listTitle = null;
+
+
+    private ListView listView2 = null;
+    private FactDetailAdapter mAdapter2 = null;
+    private List<FactDto> realDatas2 = new ArrayList<>();
+    private LinearLayout listTitle2 = null;
+    private LinearLayout ll11, ll22, ll33;
+    private TextView tv11, tv22, tv33;
+    private ImageView iv11, iv22, iv33;
+    private boolean b1 = false, b2 = false, b3 = false;//false为将序，true为升序
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +119,7 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
         initWidget();
         initAmap(savedInstanceState);
         initListView();
+        initListView2();
     }
 
     /**
@@ -121,19 +140,6 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
         aMap.showMapText(false);
         aMap.setOnCameraChangeListener(this);
         aMap.setOnMarkerClickListener(this);
-
-        aMap.setOnMapTouchListener(new AMap.OnMapTouchListener() {
-            @Override
-            public void onTouch(MotionEvent arg0) {
-                if (scrollView != null) {
-                    if (arg0.getAction() == MotionEvent.ACTION_UP) {
-                        scrollView.requestDisallowInterceptTouchEvent(false);
-                    }else {
-                        scrollView.requestDisallowInterceptTouchEvent(true);
-                    }
-                }
-            }
-        });
 
         LatLngBounds bounds = new LatLngBounds.Builder()
 //		.include(new LatLng(57.9079, 71.9282))
@@ -279,14 +285,33 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
         listView.setAdapter(factAdapter);
     }
 
+    private void initListView2() {
+        listView2 = (ListView) findViewById(R.id.listView2);
+        mAdapter2 = new FactDetailAdapter(mContext, realDatas2);
+        listView2.setAdapter(mAdapter2);
+        listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                FactDto dto = realDatas2.get(arg2);
+                Intent intent = new Intent(mContext, FactDetailChartActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("data", dto);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+    }
+
     private void initWidget() {
         llBack = (LinearLayout) findViewById(R.id.llBack);
         llBack.setOnClickListener(this);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
+        tvControl = (TextView) findViewById(R.id.tvControl);
+        tvControl.setText("列表");
+        tvControl.setOnClickListener(this);
         llContainer = (LinearLayout) findViewById(R.id.llContainer);
         llContainer1 = (LinearLayout) findViewById(R.id.llContainer1);
         scrollView = (ScrollView) findViewById(R.id.scrollView);
-        listTitle = (LinearLayout) findViewById(R.id.listTitle);
         tv1 = (TextView) findViewById(R.id.tv1);
         tv2 = (TextView) findViewById(R.id.tv2);
         tv3 = (TextView) findViewById(R.id.tv3);
@@ -295,6 +320,11 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
         tvToast = (TextView) findViewById(R.id.tvToast);
         ivChart = (ImageView) findViewById(R.id.ivChart);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        listTitle = (LinearLayout) findViewById(R.id.listTitle);
+        tv11 = (TextView) findViewById(R.id.tv11);
+        tv22 = (TextView) findViewById(R.id.tv22);
+        tv33 = (TextView) findViewById(R.id.tv33);
+        listTitle2 = (LinearLayout) findViewById(R.id.listTitle2);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -445,6 +475,19 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
                                     }
                                 }
 
+                                if (!obj.isNull("th")) {
+                                    JSONObject itemObj = obj.getJSONObject("th");
+                                    if (!itemObj.isNull("stationName")) {
+                                        tv11.setText(itemObj.getString("stationName"));
+                                    }
+                                    if (!itemObj.isNull("area")) {
+                                        tv22.setText(itemObj.getString("area"));
+                                    }
+                                    if (!itemObj.isNull("val")) {
+                                        tv33.setText(itemObj.getString("val"));
+                                    }
+                                }
+
                                 if (!obj.isNull("title")) {
                                     tvLayerName.setText(obj.getString("title"));
                                     tvLayerName.setVisibility(View.VISIBLE);
@@ -542,6 +585,19 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
                                         }
                                     }
                                 }
+
+                                realDatas2.clear();
+                                int size = realDatas.size();
+                                if (size > 50) {
+                                    size = 50;
+                                }
+                                for (int i = 0; i < size; i++) {
+                                    realDatas2.add(realDatas.get(i));
+                                }
+                                if (mAdapter2 != null) {
+                                    CommonUtil.setListViewHeightBasedOnChildren(listView2);
+                                    mAdapter2.notifyDataSetChanged();
+                                }
                                 //详情结束
 
                                 if (!obj.isNull("jb")) {
@@ -579,13 +635,11 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
                                         factAdapter.realDatas.addAll(realDatas);
                                         factAdapter.notifyDataSetChanged();
                                         tvIntro.setVisibility(View.VISIBLE);
-                                        listTitle.setVisibility(View.VISIBLE);
-                                        listView.setVisibility(View.VISIBLE);
+                                        tvControl.setVisibility(View.VISIBLE);
                                     }
                                 }else {
                                     tvIntro.setVisibility(View.GONE);
-                                    listTitle.setVisibility(View.GONE);
-                                    listView.setVisibility(View.GONE);
+                                    tvControl.setVisibility(View.GONE);
                                 }
 
                                 tvLayerName.setFocusable(true);
@@ -894,11 +948,56 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
         }
     }
 
+    private void expandList() {
+        Animation animation = new TranslateAnimation(
+                Animation.RELATIVE_TO_SELF, 0,
+                Animation.RELATIVE_TO_SELF, 0,
+                Animation.RELATIVE_TO_SELF, 1,
+                Animation.RELATIVE_TO_SELF, 0);
+        animation.setDuration(300);
+        if (scrollView.getVisibility() == View.GONE) {
+            scrollView.setAnimation(animation);
+            scrollView.setVisibility(View.VISIBLE);
+            tvControl.setText("地图");
+        }
+    }
+
+    private void colloseList() {
+        Animation animation = new TranslateAnimation(
+                Animation.RELATIVE_TO_SELF, 0,
+                Animation.RELATIVE_TO_SELF, 0,
+                Animation.RELATIVE_TO_SELF, 0,
+                Animation.RELATIVE_TO_SELF, 1);
+        animation.setDuration(300);
+        if (scrollView.getVisibility() == View.VISIBLE) {
+            scrollView.setAnimation(animation);
+            scrollView.setVisibility(View.GONE);
+            tvControl.setText("列表");
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (scrollView.getVisibility() == View.VISIBLE) {
+            colloseList();
+            return false;
+        }else {
+            return super.onKeyDown(keyCode, event);
+        }
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.llBack:
                 finish();
+                break;
+            case R.id.tvControl:
+                if (scrollView.getVisibility() == View.VISIBLE) {
+                    colloseList();
+                }else {
+                    expandList();
+                }
                 break;
         }
     }

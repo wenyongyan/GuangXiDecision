@@ -1,5 +1,9 @@
 package com.cxwl.guangxi.activity;
 
+/**
+ * 城市实况资料
+ */
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,9 +15,12 @@ import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -63,15 +70,11 @@ import okhttp3.Callback;
 import okhttp3.Request;
 import okhttp3.Response;
 
-/**
- * 城市实况资料
- */
-
 public class FactCityActivity extends BaseActivity implements View.OnClickListener, AMap.OnCameraChangeListener, AMap.OnMarkerClickListener {
 
 	private Context mContext = null;
 	private LinearLayout llBack = null;
-	private TextView tvTitle, tvControl;
+	private TextView tvTitle, tvControl, tvControl2;
 	private LinearLayout llContainer = null;
 	private LinearLayout llContainer1 = null;
 	private int width = 0;
@@ -83,7 +86,6 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 	private ListView listView = null;
 	private FactDetailAdapter mAdapter = null;
 	private List<FactDto> realDatas = new ArrayList<>();
-	private LinearLayout listTitle = null;
 	private LinearLayout ll1, ll2, ll3;
 	private TextView tv1, tv2, tv3;
 	private ImageView iv1, iv2, iv3;
@@ -129,19 +131,6 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 		aMap.showMapText(false);
 		aMap.setOnCameraChangeListener(this);
 		aMap.setOnMarkerClickListener(this);
-
-		aMap.setOnMapTouchListener(new AMap.OnMapTouchListener() {
-			@Override
-			public void onTouch(MotionEvent arg0) {
-				if (scrollView != null) {
-					if (arg0.getAction() == MotionEvent.ACTION_UP) {
-						scrollView.requestDisallowInterceptTouchEvent(false);
-					}else {
-						scrollView.requestDisallowInterceptTouchEvent(true);
-					}
-				}
-			}
-		});
 
 		LatLngBounds bounds = new LatLngBounds.Builder()
 //		.include(new LatLng(57.9079, 71.9282))
@@ -303,10 +292,12 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 		tvControl = (TextView) findViewById(R.id.tvControl);
 		tvControl.setOnClickListener(this);
 		tvControl.setText("广西全区");
+		tvControl2 = (TextView) findViewById(R.id.tvControl2);
+		tvControl2.setOnClickListener(this);
+		tvControl2.setText("列表");
 		llContainer = (LinearLayout) findViewById(R.id.llContainer);
 		llContainer1 = (LinearLayout) findViewById(R.id.llContainer1);
 		scrollView = (ScrollView) findViewById(R.id.scrollView);
-		listTitle = (LinearLayout) findViewById(R.id.listTitle);
 		ll1 = (LinearLayout) findViewById(R.id.ll1);
 		ll1.setOnClickListener(this);
 		ll2 = (LinearLayout) findViewById(R.id.ll2);
@@ -564,14 +555,12 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 									}
 									if (realDatas.size() > 0 && mAdapter != null) {
 										mAdapter.notifyDataSetChanged();
-//										CommonUtil.setListViewHeightBasedOnChildren(listView);
+										CommonUtil.setListViewHeightBasedOnChildren(listView);
 										tvIntro.setVisibility(View.VISIBLE);
-										listTitle.setVisibility(View.VISIBLE);
-										listView.setVisibility(View.VISIBLE);
+										tvControl2.setVisibility(View.VISIBLE);
 									}else {
 										tvIntro.setVisibility(View.GONE);
-										listTitle.setVisibility(View.GONE);
-										listView.setVisibility(View.GONE);
+										tvControl2.setVisibility(View.GONE);
 									}
 								}
 								//详情结束
@@ -884,6 +873,44 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 
 	}
 
+	private void expandList() {
+		Animation animation = new TranslateAnimation(
+				Animation.RELATIVE_TO_SELF, 0,
+				Animation.RELATIVE_TO_SELF, 0,
+				Animation.RELATIVE_TO_SELF, 1,
+				Animation.RELATIVE_TO_SELF, 0);
+		animation.setDuration(300);
+		if (scrollView.getVisibility() == View.GONE) {
+			scrollView.setAnimation(animation);
+			scrollView.setVisibility(View.VISIBLE);
+			tvControl2.setText("地图");
+		}
+	}
+
+	private void colloseList() {
+		Animation animation = new TranslateAnimation(
+				Animation.RELATIVE_TO_SELF, 0,
+				Animation.RELATIVE_TO_SELF, 0,
+				Animation.RELATIVE_TO_SELF, 0,
+				Animation.RELATIVE_TO_SELF, 1);
+		animation.setDuration(300);
+		if (scrollView.getVisibility() == View.VISIBLE) {
+			scrollView.setAnimation(animation);
+			scrollView.setVisibility(View.GONE);
+			tvControl2.setText("列表");
+		}
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (scrollView.getVisibility() == View.VISIBLE) {
+			colloseList();
+			return false;
+		}else {
+			return super.onKeyDown(keyCode, event);
+		}
+	}
+
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -896,6 +923,13 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 				bundle.putParcelable("data", data);
 				intent.putExtras(bundle);
 				startActivityForResult(intent, 1000);
+				break;
+			case R.id.tvControl2:
+				if (scrollView.getVisibility() == View.VISIBLE) {
+					colloseList();
+				}else {
+					expandList();
+				}
 				break;
 			case R.id.ll1:
 				if (b1) {//升序

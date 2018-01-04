@@ -72,13 +72,19 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"/>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+
             <TextView
                 android:visibility="gone"
                 android:id="@+id/tvControl2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/tvControl"
                 android:paddingBottom="12dp"
                 android:paddingTop="12dp"
                 android:paddingRight="10dp"
@@ -91,14 +97,14 @@
                 android:id="@+id/tvControl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
                 android:paddingBottom="12dp"
                 android:paddingTop="12dp"
                 android:paddingRight="10dp"
                 android:paddingLeft="10dp"
                 android:textColor="@color/white"
                 android:textSize="@dimen/level_4" />
+
+            </LinearLayout>
         </RelativeLayout>
 
     </RelativeLayout>

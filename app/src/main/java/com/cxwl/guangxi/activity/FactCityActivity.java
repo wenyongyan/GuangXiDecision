@@ -184,32 +184,7 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 					float msgZoom = (Float)msg.obj;
 					removePersonStations();
 					removeAutoStations();
-					if (msgZoom >= 10.0) {
-						//绘制自动站
-						for (int i = 0; i < realDatas.size(); i++) {
-							FactDto dto = realDatas.get(i);
-							LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-							View view = inflater.inflate(R.layout.layout_fact_value, null);
-							TextView tvValue = (TextView) view.findViewById(R.id.tvValue);
-							TextView tvName = (TextView) view.findViewById(R.id.tvName);
-							if (dto.val >= 99999) {
-								tvValue.setText("");
-							}else {
-								tvValue.setText(dto.val+"");
-							}
-							if (!TextUtils.isEmpty(dto.stationName)) {
-								tvName.setText(dto.stationName);
-							}
-							MarkerOptions options = new MarkerOptions();
-							options.title(dto.stationName);
-							options.anchor(0.5f, 0.5f);
-							options.position(new LatLng(dto.lat, dto.lng));
-							options.icon(BitmapDescriptorFactory.fromView(view));
-							Marker marker = aMap.addMarker(options);
-							marker.setVisible(true);
-							autoStations.add(marker);
-						}
-					} else {
+					if (msgZoom <= 8.5f) {
 						//绘制人工站
 						for (int i = 0; i < cityInfos.size(); i++) {
 							FactDto dto = cityInfos.get(i);
@@ -233,6 +208,62 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 							Marker marker = aMap.addMarker(options);
 							marker.setVisible(true);
 							personStations.add(marker);
+						}
+					} else if (msgZoom > 8.5f && msgZoom <= 9.5f){//乡镇站点
+						//绘制自动站
+						for (int i = 0; i < realDatas.size(); i++) {
+							FactDto dto = realDatas.get(i);
+							if (dto.stationName.contains("乡") || dto.stationName.contains("镇")) {
+								LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+								View view = inflater.inflate(R.layout.layout_fact_value, null);
+								TextView tvValue = (TextView) view.findViewById(R.id.tvValue);
+								TextView tvName = (TextView) view.findViewById(R.id.tvName);
+								if (dto.val >= 99999) {
+									tvValue.setText("");
+								}else {
+									tvValue.setText(dto.val+"");
+								}
+								if (!TextUtils.isEmpty(dto.stationName)) {
+									tvName.setText(dto.stationName);
+								}
+								MarkerOptions options = new MarkerOptions();
+								options.title(dto.stationName);
+								options.anchor(0.5f, 0.5f);
+								options.position(new LatLng(dto.lat, dto.lng));
+								options.icon(BitmapDescriptorFactory.fromView(view));
+								Marker marker = aMap.addMarker(options);
+								marker.setVisible(true);
+								autoStations.add(marker);
+							}
+
+						}
+					} else if (msgZoom > 9.5f){//村站点
+						//绘制自动站
+						for (int i = 0; i < realDatas.size(); i++) {
+							FactDto dto = realDatas.get(i);
+							if (dto.stationName.contains("村")) {
+								LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+								View view = inflater.inflate(R.layout.layout_fact_value, null);
+								TextView tvValue = (TextView) view.findViewById(R.id.tvValue);
+								TextView tvName = (TextView) view.findViewById(R.id.tvName);
+								if (dto.val >= 99999) {
+									tvValue.setText("");
+								}else {
+									tvValue.setText(dto.val+"");
+								}
+								if (!TextUtils.isEmpty(dto.stationName)) {
+									tvName.setText(dto.stationName);
+								}
+								MarkerOptions options = new MarkerOptions();
+								options.title(dto.stationName);
+								options.anchor(0.5f, 0.5f);
+								options.position(new LatLng(dto.lat, dto.lng));
+								options.icon(BitmapDescriptorFactory.fromView(view));
+								Marker marker = aMap.addMarker(options);
+								marker.setVisible(true);
+								autoStations.add(marker);
+							}
+
 						}
 					}
 					break;

@@ -48,7 +48,7 @@ public class SevenDayFragment extends Fragment{
 		llContainer2 = (LinearLayout) v.findViewById(R.id.llContainer2);
 		llContainer2.removeAllViews();
 		
-		List<WeatherDto> weeklyList = new ArrayList<WeatherDto>();
+		List<WeatherDto> weeklyList = new ArrayList<>();
 		weeklyList.addAll(getArguments().<WeatherDto>getParcelableArrayList("weeklyList"));
 		for (int i = 0; i < weeklyList.size(); i++) {
 			WeatherDto dto = weeklyList.get(i);

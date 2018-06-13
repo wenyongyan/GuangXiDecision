@@ -47,19 +47,19 @@ public class CityActivity extends BaseActivity implements OnClickListener{
 	//搜索城市后的结果列表
 	private ListView mListView = null;
 	private CityAdapter cityAdapter = null;
-	private List<CityDto> cityList = new ArrayList<CityDto>();
+	private List<CityDto> cityList = new ArrayList<>();
 
 	//省内热门
 	private StickyGridHeadersGridView pGridView = null;
 	private CityLocalAdapter pAdapter = null;
-	private List<CityDto> pList = new ArrayList<CityDto>();
+	private List<CityDto> pList = new ArrayList<>();
 	private int section = 1;
-	private HashMap<String, Integer> sectionMap = new HashMap<String, Integer>();
+	private HashMap<String, Integer> sectionMap = new HashMap<>();
 	
 	//全国热门
 	private GridView nGridView = null;
 	private CityFragmentAdapter nAdapter = null;
-	private List<CityDto> nList = new ArrayList<CityDto>();
+	private List<CityDto> nList = new ArrayList<>();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

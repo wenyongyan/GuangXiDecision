@@ -29,8 +29,8 @@ public class HeadWarningActivity extends BaseActivity implements OnClickListener
 	private LinearLayout llBack = null;
 	private TextView tvTitle = null;
 	private MainViewPager viewPager;
-	private List<Fragment> fragments = new ArrayList<Fragment>();
-	private ArrayList<WarningDto> warnList = new ArrayList<WarningDto>();
+	private List<Fragment> fragments = new ArrayList<>();
+	private ArrayList<WarningDto> warnList = new ArrayList<>();
 	private ImageView[] ivTips = null;//装载点的数组
 	private ViewGroup viewGroup = null;
 
@@ -54,7 +54,6 @@ public class HeadWarningActivity extends BaseActivity implements OnClickListener
 	/**
 	 * 初始化viewPager
 	 */
-	@SuppressWarnings("unchecked")
 	private void initViewPager() {
 		if (getIntent().hasExtra("warningList")) {
 			warnList.clear();

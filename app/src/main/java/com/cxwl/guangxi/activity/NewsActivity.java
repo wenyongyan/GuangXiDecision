@@ -6,7 +6,6 @@ package com.cxwl.guangxi.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -21,18 +20,23 @@ import com.cxwl.guangxi.R;
 import com.cxwl.guangxi.adapter.NewsAdapter;
 import com.cxwl.guangxi.common.CONST;
 import com.cxwl.guangxi.dto.NewsDto;
-import com.cxwl.guangxi.utils.CustomHttpClient;
+import com.cxwl.guangxi.utils.OkHttpUtil;
 import com.cxwl.guangxi.view.RefreshLayout;
 import com.cxwl.guangxi.view.RefreshLayout.OnLoadListener;
 import com.cxwl.guangxi.view.RefreshLayout.OnRefreshListener;
 
-import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class NewsActivity extends BaseActivity implements OnClickListener, OnRefreshListener, OnLoadListener{
 	
@@ -41,14 +45,14 @@ public class NewsActivity extends BaseActivity implements OnClickListener, OnRef
 	private TextView tvTitle = null;
 	private ListView mListView = null;
 	private NewsAdapter mAdapter = null;
-	private List<NewsDto> mList = new ArrayList<NewsDto>();
+	private List<NewsDto> mList = new ArrayList<>();
 	private RefreshLayout refreshLayout = null;//下拉刷新布局
 	private String dataUrl = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.news);
+		setContentView(R.layout.activity_news);
 		mContext = this;
 		showDialog();
 		initRefreshLayout();
@@ -73,14 +77,14 @@ public class NewsActivity extends BaseActivity implements OnClickListener, OnRef
 		mList.clear();
 		dataUrl = getIntent().getStringExtra(CONST.WEB_URL);
 		if (!TextUtils.isEmpty(dataUrl)) {
-			asyncQuery(dataUrl);
+			OkHttpList(dataUrl);
 		}
 	}
 	
 	@Override
 	public void onLoad() {
 		if (!TextUtils.isEmpty(dataUrl)) {
-			asyncQuery(dataUrl);
+			OkHttpList(dataUrl);
 		}
 	}
 	
@@ -93,7 +97,7 @@ public class NewsActivity extends BaseActivity implements OnClickListener, OnRef
 
 		dataUrl = getIntent().getStringExtra(CONST.WEB_URL);
 		if (!TextUtils.isEmpty(dataUrl)) {
-			asyncQuery(dataUrl);
+			OkHttpList(dataUrl);
 		}
 	}
 	
@@ -118,92 +122,61 @@ public class NewsActivity extends BaseActivity implements OnClickListener, OnRef
 		});
 	}
 	
-	private void asyncQuery(String url) {
-		HttpAsyncTask task = new HttpAsyncTask();
-		task.setMethod("GET");
-		task.setTimeOut(CustomHttpClient.TIME_OUT);
-		task.execute(url);
+	private void OkHttpList(final String url) {
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+					@Override
+					public void onFailure(Call call, IOException e) {
+
+					}
+
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
+						}
+						final String result = response.body().string();
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								cancelDialog();
+								refreshLayout.setRefreshing(false);
+								refreshLayout.setLoading(false);
+								if (!TextUtils.isEmpty(result)) {
+									try {
+										JSONObject obj = new JSONObject(result);
+										if (!obj.isNull("l")) {
+											JSONArray array = new JSONArray(obj.getString("l"));
+											for (int i = 0; i < array.length(); i++) {
+												JSONObject itemObj = array.getJSONObject(i);
+												NewsDto dto = new NewsDto();
+												dto.title = itemObj.getString("l1");
+												dto.detailUrl = itemObj.getString("l2");
+												dto.time = itemObj.getString("l3");
+												dto.imgUrl = itemObj.getString("l4");
+												mList.add(dto);
+											}
+										}
+										if (!obj.isNull("prev")) {
+											dataUrl = obj.getString("prev");
+										}
+										if (mAdapter != null) {
+											mAdapter.notifyDataSetChanged();
+										}
+									} catch (JSONException e1) {
+										e1.printStackTrace();
+									}
+								}
+							}
+						});
+					}
+				});
+			}
+		}).start();
 	}
 	
-	/**
-	 * 异步请求方法
-	 * @author dell
-	 *
-	 */
-	private class HttpAsyncTask extends AsyncTask<String, Void, String> {
-		private String method = "GET";
-		private List<NameValuePair> nvpList = new ArrayList<NameValuePair>();
-		
-		public HttpAsyncTask() {
-		}
-
-		@Override
-		protected String doInBackground(String... url) {
-			String result = null;
-			if (method.equalsIgnoreCase("POST")) {
-				result = CustomHttpClient.post(url[0], nvpList);
-			} else if (method.equalsIgnoreCase("GET")) {
-				result = CustomHttpClient.get(url[0]);
-			}
-			return result;
-		}
-
-		@Override
-		protected void onPostExecute(String requestResult) {
-			super.onPostExecute(requestResult);
-			cancelDialog();
-			refreshLayout.setRefreshing(false);
-			refreshLayout.setLoading(false);
-			if (requestResult != null) {
-				try {
-					JSONObject obj = new JSONObject(requestResult);
-					if (!obj.isNull("l")) {
-						JSONArray array = new JSONArray(obj.getString("l"));
-						for (int i = 0; i < array.length(); i++) {
-							JSONObject itemObj = array.getJSONObject(i);
-							NewsDto dto = new NewsDto();
-							dto.title = itemObj.getString("l1");
-							dto.detailUrl = itemObj.getString("l2");
-							dto.time = itemObj.getString("l3");
-							dto.imgUrl = itemObj.getString("l4");
-							mList.add(dto);
-						}
-					}
-					if (!obj.isNull("prev")) {
-						dataUrl = obj.getString("prev");
-					}
-					if (mAdapter != null) {
-						mAdapter.notifyDataSetChanged();
-					}
-				} catch (JSONException e1) {
-					e1.printStackTrace();
-				}
-			}
-		}
-
-		@SuppressWarnings("unused")
-		private void setParams(NameValuePair nvp) {
-			nvpList.add(nvp);
-		}
-
-		private void setMethod(String method) {
-			this.method = method;
-		}
-
-		private void setTimeOut(int timeOut) {
-			CustomHttpClient.TIME_OUT = timeOut;
-		}
-
-		/**
-		 * 取消当前task
-		 */
-		@SuppressWarnings("unused")
-		private void cancelTask() {
-			CustomHttpClient.shuttdownRequest();
-			this.cancel(true);
-		}
-	}
-
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.llBack) {

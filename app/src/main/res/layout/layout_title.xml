@@ -1,78 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/reTitle"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/title_bg"
-    android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/tvBlank"
-        android:layout_width="match_parent"
-        android:layout_height="24dp" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvBlank" >
-
-        <LinearLayout
-            android:id="@+id/llBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:paddingBottom="12dp"
-            android:paddingTop="12dp"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:gravity="center_vertical" >
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/iv_back" />
-
-            <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/reTitle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:text="@string/back"
-                android:textColor="@color/white"
-                android:textSize="@dimen/level_4" />
-        </LinearLayout>
+                android:background="@color/title_bg"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/level_3" />
-        
-        <ImageView 
-            android:visibility="gone"
-            android:id="@+id/ivControl"
+
+    <LinearLayout
+        android:id="@+id/llBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:paddingBottom="12dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="12dp">
+
+        <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/iv_warning_list"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"/>
+            android:src="@drawable/iv_back"/>
 
         <TextView
-            android:visibility="gone"
-            android:id="@+id/tvControl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:paddingBottom="12dp"
-            android:paddingTop="12dp"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/back"
             android:textColor="@color/white"
-            android:textSize="@dimen/level_4" />
-    </RelativeLayout>
+            android:textSize="@dimen/level_4"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/level_3"/>
+
+    <ImageView
+        android:id="@+id/ivControl"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/iv_warning_list"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvControl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingBottom="12dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="12dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/level_4"
+        android:visibility="gone"/>
 
 </RelativeLayout>

@@ -4,9 +4,12 @@ package com.cxwl.guangxi.activity;
  * 城市实况资料
  */
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,7 +20,6 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -175,6 +177,7 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 		zoom = arg0.zoom;
 	}
 
+	@SuppressLint("HandlerLeak")
 	private Handler handler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
@@ -192,37 +195,27 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 							View view = inflater.inflate(R.layout.layout_fact_value, null);
 							TextView tvValue = (TextView) view.findViewById(R.id.tvValue);
 							TextView tvName = (TextView) view.findViewById(R.id.tvName);
+							ImageView ivWind = (ImageView) view.findViewById(R.id.ivWind);
+
 							if (dto.val >= 99999) {
 								tvValue.setText("");
 							}else {
 								tvValue.setText(dto.val+"");
-							}
-							if (!TextUtils.isEmpty(dto.stationName)) {
-								tvName.setText(dto.stationName);
-							}
-							MarkerOptions options = new MarkerOptions();
-							options.title(dto.stationName);
-							options.anchor(0.5f, 0.5f);
-							options.position(new LatLng(dto.lat, dto.lng));
-							options.icon(BitmapDescriptorFactory.fromView(view));
-							Marker marker = aMap.addMarker(options);
-							marker.setVisible(true);
-							personStations.add(marker);
-						}
-					} else if (msgZoom > 8.5f && msgZoom <= 9.5f){//乡镇站点
-						//绘制自动站
-						for (int i = 0; i < realDatas.size(); i++) {
-							FactDto dto = realDatas.get(i);
-							if (dto.stationName.contains("乡") || dto.stationName.contains("镇")) {
-								LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-								View view = inflater.inflate(R.layout.layout_fact_value, null);
-								TextView tvValue = (TextView) view.findViewById(R.id.tvValue);
-								TextView tvName = (TextView) view.findViewById(R.id.tvName);
-								if (dto.val >= 99999) {
-									tvValue.setText("");
-								}else {
-									tvValue.setText(dto.val+"");
+
+								if (dto.val1 != -1) {
+									Bitmap b = CommonUtil.getWindMarker(mContext, dto.val);
+									if (b != null) {
+										Matrix matrix = new Matrix();
+										matrix.postScale(1, 1);
+										matrix.postRotate((float)dto.val1);
+										Bitmap bitmap = Bitmap.createBitmap(b, 0, 0, b.getWidth(), b.getHeight(), matrix, true);
+										if (bitmap != null) {
+											ivWind.setImageBitmap(bitmap);
+											ivWind.setVisibility(View.VISIBLE);
+										}
+									}
 								}
+
 								if (!TextUtils.isEmpty(dto.stationName)) {
 									tvName.setText(dto.stationName);
 								}
@@ -233,7 +226,55 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 								options.icon(BitmapDescriptorFactory.fromView(view));
 								Marker marker = aMap.addMarker(options);
 								marker.setVisible(true);
-								autoStations.add(marker);
+								personStations.add(marker);
+
+							}
+
+						}
+					} else if (msgZoom > 8.5f && msgZoom <= 9.5f){//乡镇站点
+						//绘制自动站
+						for (int i = 0; i < realDatas.size(); i++) {
+							FactDto dto = realDatas.get(i);
+							if (dto.stationName.contains("乡") || dto.stationName.contains("镇")) {
+								LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+								View view = inflater.inflate(R.layout.layout_fact_value, null);
+								TextView tvValue = (TextView) view.findViewById(R.id.tvValue);
+								TextView tvName = (TextView) view.findViewById(R.id.tvName);
+								ImageView ivWind = (ImageView) view.findViewById(R.id.ivWind);
+
+								if (dto.val >= 99999) {
+									tvValue.setText("");
+								}else {
+									tvValue.setText(dto.val+"");
+
+									if (dto.val1 != -1) {
+										Bitmap b = CommonUtil.getWindMarker(mContext, dto.val);
+										if (b != null) {
+											Matrix matrix = new Matrix();
+											matrix.postScale(1, 1);
+											matrix.postRotate((float)dto.val1);
+											Bitmap bitmap = Bitmap.createBitmap(b, 0, 0, b.getWidth(), b.getHeight(), matrix, true);
+											if (bitmap != null) {
+												ivWind.setImageBitmap(bitmap);
+												ivWind.setVisibility(View.VISIBLE);
+											}
+										}
+									}
+
+									if (!TextUtils.isEmpty(dto.stationName)) {
+										tvName.setText(dto.stationName);
+									}
+									MarkerOptions options = new MarkerOptions();
+									options.title(dto.stationName);
+									options.anchor(0.5f, 0.5f);
+									options.position(new LatLng(dto.lat, dto.lng));
+									options.icon(BitmapDescriptorFactory.fromView(view));
+									Marker marker = aMap.addMarker(options);
+									marker.setVisible(true);
+									autoStations.add(marker);
+
+								}
+
 							}
 
 						}
@@ -246,22 +287,41 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 								View view = inflater.inflate(R.layout.layout_fact_value, null);
 								TextView tvValue = (TextView) view.findViewById(R.id.tvValue);
 								TextView tvName = (TextView) view.findViewById(R.id.tvName);
+								ImageView ivWind = (ImageView) view.findViewById(R.id.ivWind);
+
 								if (dto.val >= 99999) {
 									tvValue.setText("");
 								}else {
 									tvValue.setText(dto.val+"");
+
+									if (dto.val1 != -1) {
+										Bitmap b = CommonUtil.getWindMarker(mContext, dto.val);
+										if (b != null) {
+											Matrix matrix = new Matrix();
+											matrix.postScale(1, 1);
+											matrix.postRotate((float)dto.val1);
+											Bitmap bitmap = Bitmap.createBitmap(b, 0, 0, b.getWidth(), b.getHeight(), matrix, true);
+											if (bitmap != null) {
+												ivWind.setImageBitmap(bitmap);
+												ivWind.setVisibility(View.VISIBLE);
+											}
+										}
+									}
+
+									if (!TextUtils.isEmpty(dto.stationName)) {
+										tvName.setText(dto.stationName);
+									}
+									MarkerOptions options = new MarkerOptions();
+									options.title(dto.stationName);
+									options.anchor(0.5f, 0.5f);
+									options.position(new LatLng(dto.lat, dto.lng));
+									options.icon(BitmapDescriptorFactory.fromView(view));
+									Marker marker = aMap.addMarker(options);
+									marker.setVisible(true);
+									autoStations.add(marker);
+
 								}
-								if (!TextUtils.isEmpty(dto.stationName)) {
-									tvName.setText(dto.stationName);
-								}
-								MarkerOptions options = new MarkerOptions();
-								options.title(dto.stationName);
-								options.anchor(0.5f, 0.5f);
-								options.position(new LatLng(dto.lat, dto.lng));
-								options.icon(BitmapDescriptorFactory.fromView(view));
-								Marker marker = aMap.addMarker(options);
-								marker.setVisible(true);
-								autoStations.add(marker);
+
 							}
 
 						}
@@ -473,151 +533,162 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 			return;
 		}
 		progressBar.setVisibility(View.VISIBLE);
-		url = url + "&city=" + adCode;
-		OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+		final String url2 = url + "&city=" + adCode;
+		new Thread(new Runnable() {
 			@Override
-			public void onFailure(Call call, IOException e) {
-
-			}
-
-			@Override
-			public void onResponse(Call call, Response response) throws IOException {
-				if (!response.isSuccessful()) {
-					return;
-				}
-				final String result = response.body().string();
-				runOnUiThread(new Runnable() {
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().url(url2).build(), new Callback() {
 					@Override
-					public void run() {
-						if (result != null) {
-							try {
-								JSONObject obj = new JSONObject(result);
+					public void onFailure(Call call, IOException e) {
 
-								if (!obj.isNull("th")) {
-									JSONObject itemObj = obj.getJSONObject("th");
-									if (!itemObj.isNull("stationName")) {
-										tv1.setText(itemObj.getString("stationName"));
-									}
-									if (!itemObj.isNull("area")) {
-										tv2.setText(itemObj.getString("area"));
-									}
-									if (!itemObj.isNull("val")) {
-										tv3.setText(itemObj.getString("val"));
-									}
-								}
+					}
 
-								if (!obj.isNull("title")) {
-									tvLayerName.setText(obj.getString("title"));
-									tvLayerName.setVisibility(View.VISIBLE);
-								}
-
-								if (!obj.isNull("cutlineUrl")) {
-									FinalBitmap finalBitmap = FinalBitmap.create(mContext);
-									finalBitmap.display(ivChart, obj.getString("cutlineUrl"), null, 0);
-								}
-
-								if (!obj.isNull("zx")) {
-									tvIntro.setText(obj.getString("zx"));
-								}
-
-								if (!obj.isNull("t")) {
-									cityInfos.clear();
-									JSONArray array = obj.getJSONArray("t");
-									for (int i = 0; i < array.length(); i++) {
-										FactDto f = new FactDto();
-										JSONObject o = array.getJSONObject(i);
-										if (!o.isNull("name")) {
-											f.stationName = o.getString("name");
-										}
-										if (!o.isNull("stationCode")) {
-											f.stationCode = o.getString("stationCode");
-										}
-										if (!o.isNull("lon")) {
-											f.lng = Double.parseDouble(o.getString("lon"));
-										}
-										if (!o.isNull("lat")) {
-											f.lat = Double.parseDouble(o.getString("lat"));
-										}
-										if (!o.isNull("value")) {
-											f.val = Double.parseDouble(o.getString("value"));
-										}
-										cityInfos.add(f);
-									}
-								}
-
-								if (!obj.isNull("dataUrl")) {
-									String dataUrl = obj.getString("dataUrl");
-									if (!TextUtils.isEmpty(dataUrl)) {
-										OkHttpJson(dataUrl);
-									}
-								}
-
-								if (!obj.isNull("realDatas")) {
-									realDatas.clear();
-									JSONArray array = new JSONArray(obj.getString("realDatas"));
-									for (int i = 0; i < array.length(); i++) {
-										JSONObject itemObj = array.getJSONObject(i);
-										FactDto dto = new FactDto();
-										if (!itemObj.isNull("stationCode")) {
-											dto.stationCode = itemObj.getString("stationCode");
-										}
-										if (!itemObj.isNull("stationName")) {
-											dto.stationName = itemObj.getString("stationName");
-										}
-										if (!itemObj.isNull("area")) {
-											dto.area = itemObj.getString("area");
-										}
-										if (!itemObj.isNull("area1")) {
-											dto.area1 = itemObj.getString("area1");
-										}
-										if (!itemObj.isNull("val")) {
-											dto.val = itemObj.getDouble("val");
-										}
-										if (!itemObj.isNull("lat")) {
-											dto.lat = itemObj.getDouble("lat");
-										}
-										if (!itemObj.isNull("lon")) {
-											dto.lng = itemObj.getDouble("lon");
-										}
-
-										if (!TextUtils.isEmpty(dto.stationName) && !TextUtils.isEmpty(dto.area)) {
-											realDatas.add(dto);
-										}
-									}
-									if (realDatas.size() > 0 && mAdapter != null) {
-										mAdapter.notifyDataSetChanged();
-										CommonUtil.setListViewHeightBasedOnChildren(listView);
-										tvIntro.setVisibility(View.VISIBLE);
-										tvControl2.setVisibility(View.VISIBLE);
-									}else {
-										tvIntro.setVisibility(View.GONE);
-										tvControl2.setVisibility(View.GONE);
-									}
-								}
-								//详情结束
-
-								tvLayerName.setFocusable(true);
-								tvLayerName.setFocusableInTouchMode(true);
-								tvLayerName.requestFocus();
-
-							} catch (JSONException e) {
-								e.printStackTrace();
-							}
-						}else {
-							removePolygons();
-							progressBar.setVisibility(View.GONE);
-							tvToast.setVisibility(View.VISIBLE);
-							new Handler().postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									tvToast.setVisibility(View.GONE);
-								}
-							}, 1000);
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
 						}
+						final String result = response.body().string();
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								if (result != null) {
+									try {
+										JSONObject obj = new JSONObject(result);
+
+										if (!obj.isNull("th")) {
+											JSONObject itemObj = obj.getJSONObject("th");
+											if (!itemObj.isNull("stationName")) {
+												tv1.setText(itemObj.getString("stationName"));
+											}
+											if (!itemObj.isNull("area")) {
+												tv2.setText(itemObj.getString("area"));
+											}
+											if (!itemObj.isNull("val")) {
+												tv3.setText(itemObj.getString("val"));
+											}
+										}
+
+										if (!obj.isNull("title")) {
+											tvLayerName.setText(obj.getString("title"));
+											tvLayerName.setVisibility(View.VISIBLE);
+										}
+
+										if (!obj.isNull("cutlineUrl")) {
+											FinalBitmap finalBitmap = FinalBitmap.create(mContext);
+											finalBitmap.display(ivChart, obj.getString("cutlineUrl"), null, 0);
+										}
+
+										if (!obj.isNull("zx")) {
+											tvIntro.setText(obj.getString("zx"));
+										}
+
+										if (!obj.isNull("t")) {
+											cityInfos.clear();
+											JSONArray array = obj.getJSONArray("t");
+											for (int i = 0; i < array.length(); i++) {
+												FactDto f = new FactDto();
+												JSONObject o = array.getJSONObject(i);
+												if (!o.isNull("name")) {
+													f.stationName = o.getString("name");
+												}
+												if (!o.isNull("stationCode")) {
+													f.stationCode = o.getString("stationCode");
+												}
+												if (!o.isNull("lon")) {
+													f.lng = Double.parseDouble(o.getString("lon"));
+												}
+												if (!o.isNull("lat")) {
+													f.lat = Double.parseDouble(o.getString("lat"));
+												}
+												if (!o.isNull("value1")) {
+													f.val1 = Double.parseDouble(o.getString("value1"));
+												}
+												if (!o.isNull("value")) {
+													f.val = Double.parseDouble(o.getString("value"));
+												}
+												cityInfos.add(f);
+											}
+										}
+
+										if (!obj.isNull("dataUrl")) {
+											String dataUrl = obj.getString("dataUrl");
+											if (!TextUtils.isEmpty(dataUrl)) {
+												OkHttpJson(dataUrl);
+											}
+										}
+
+										if (!obj.isNull("realDatas")) {
+											realDatas.clear();
+											JSONArray array = new JSONArray(obj.getString("realDatas"));
+											for (int i = 0; i < array.length(); i++) {
+												JSONObject itemObj = array.getJSONObject(i);
+												FactDto dto = new FactDto();
+												if (!itemObj.isNull("stationCode")) {
+													dto.stationCode = itemObj.getString("stationCode");
+												}
+												if (!itemObj.isNull("stationName")) {
+													dto.stationName = itemObj.getString("stationName");
+												}
+												if (!itemObj.isNull("area")) {
+													dto.area = itemObj.getString("area");
+												}
+												if (!itemObj.isNull("area1")) {
+													dto.area1 = itemObj.getString("area1");
+												}
+												if (!itemObj.isNull("val1")) {
+													dto.val1 = Double.parseDouble(itemObj.getString("val1"));
+												}
+												if (!itemObj.isNull("val")) {
+													dto.val = Double.parseDouble(itemObj.getString("val"));
+												}
+												if (!itemObj.isNull("lat")) {
+													dto.lat = Double.parseDouble(itemObj.getString("lat"));
+												}
+												if (!itemObj.isNull("lon")) {
+													dto.lng = Double.parseDouble(itemObj.getString("lon"));
+												}
+
+												if (!TextUtils.isEmpty(dto.stationName) && !TextUtils.isEmpty(dto.area)) {
+													realDatas.add(dto);
+												}
+											}
+											if (realDatas.size() > 0 && mAdapter != null) {
+												mAdapter.notifyDataSetChanged();
+												CommonUtil.setListViewHeightBasedOnChildren(listView);
+												tvIntro.setVisibility(View.VISIBLE);
+												tvControl2.setVisibility(View.VISIBLE);
+											}else {
+												tvIntro.setVisibility(View.GONE);
+												tvControl2.setVisibility(View.GONE);
+											}
+										}
+										//详情结束
+
+										tvLayerName.setFocusable(true);
+										tvLayerName.setFocusableInTouchMode(true);
+										tvLayerName.requestFocus();
+
+									} catch (JSONException e) {
+										e.printStackTrace();
+									}
+								}else {
+									removePolygons();
+									progressBar.setVisibility(View.GONE);
+									tvToast.setVisibility(View.VISIBLE);
+									new Handler().postDelayed(new Runnable() {
+										@Override
+										public void run() {
+											tvToast.setVisibility(View.GONE);
+										}
+									}, 1000);
+								}
+							}
+						});
 					}
 				});
 			}
-		});
+		}).start();
 	}
 
 	/**
@@ -647,42 +718,47 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 	 * 请求图层数据
 	 * @param url
 	 */
-	private void OkHttpJson(String url) {
+	private void OkHttpJson(final String url) {
 		if (TextUtils.isEmpty(url)) {
 			return;
 		}
-		OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+		new Thread(new Runnable() {
 			@Override
-			public void onFailure(Call call, IOException e) {
-
-			}
-
-			@Override
-			public void onResponse(Call call, Response response) throws IOException {
-				if (!response.isSuccessful()) {
-					return;
-				}
-				final String result = response.body().string();
-				runOnUiThread(new Runnable() {
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
 					@Override
-					public void run() {
-						if (result != null) {
-							drawDataToMap(result);
-						}else {
-							removePolygons();
-							progressBar.setVisibility(View.GONE);
-							tvToast.setVisibility(View.VISIBLE);
-							new Handler().postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									tvToast.setVisibility(View.GONE);
-								}
-							}, 1000);
+					public void onFailure(Call call, IOException e) {
+
+					}
+
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
 						}
+						final String result = response.body().string();
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								if (result != null) {
+									drawDataToMap(result);
+								}else {
+									removePolygons();
+									progressBar.setVisibility(View.GONE);
+									tvToast.setVisibility(View.VISIBLE);
+									new Handler().postDelayed(new Runnable() {
+										@Override
+										public void run() {
+											tvToast.setVisibility(View.GONE);
+										}
+									}, 1000);
+								}
+							}
+						});
 					}
 				});
 			}
-		});
+		}).start();
 	}
 
 	private void removeTexts() {
@@ -884,22 +960,41 @@ public class FactCityActivity extends BaseActivity implements View.OnClickListen
 			View view = inflater.inflate(R.layout.layout_fact_value, null);
 			TextView tvValue = (TextView) view.findViewById(R.id.tvValue);
 			TextView tvName = (TextView) view.findViewById(R.id.tvName);
+			ImageView ivWind = (ImageView) view.findViewById(R.id.ivWind);
+
 			if (dto.val >= 99999) {
 				tvValue.setText("");
 			}else {
 				tvValue.setText(dto.val+"");
+
+				if (dto.val1 != -1) {
+					Bitmap b = CommonUtil.getWindMarker(mContext, dto.val);
+					if (b != null) {
+						Matrix matrix = new Matrix();
+						matrix.postScale(1, 1);
+						matrix.postRotate((float)dto.val1);
+						Bitmap bitmap = Bitmap.createBitmap(b, 0, 0, b.getWidth(), b.getHeight(), matrix, true);
+						if (bitmap != null) {
+							ivWind.setImageBitmap(bitmap);
+							ivWind.setVisibility(View.VISIBLE);
+						}
+					}
+				}
+
+				if (!TextUtils.isEmpty(dto.stationName)) {
+					tvName.setText(dto.stationName);
+				}
+				MarkerOptions options = new MarkerOptions();
+				options.title(dto.stationName);
+				options.anchor(0.5f, 1.0f);
+				options.position(new LatLng(dto.lat, dto.lng));
+				options.icon(BitmapDescriptorFactory.fromView(view));
+				Marker marker = aMap.addMarker(options);
+				marker.setVisible(true);
+				personStations.add(marker);
+
 			}
-			if (!TextUtils.isEmpty(dto.stationName)) {
-				tvName.setText(dto.stationName);
-			}
-			MarkerOptions options = new MarkerOptions();
-			options.title(dto.stationName);
-			options.anchor(0.5f, 1.0f);
-			options.position(new LatLng(dto.lat, dto.lng));
-			options.icon(BitmapDescriptorFactory.fromView(view));
-			Marker marker = aMap.addMarker(options);
-			marker.setVisible(true);
-			personStations.add(marker);
+
 		}
 
 	}

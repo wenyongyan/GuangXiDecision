@@ -3,7 +3,6 @@ package com.cxwl.guangxi.activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -19,27 +18,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cxwl.guangxi.R;
-import com.cxwl.guangxi.common.CONST;
 import com.cxwl.guangxi.common.ColumnData;
-import com.cxwl.guangxi.dto.NewsDto;
 import com.cxwl.guangxi.fragment.ServiceMaterialFragment;
-import com.cxwl.guangxi.utils.CustomHttpClient;
-import com.cxwl.guangxi.utils.OkHttpUtil;
 import com.cxwl.guangxi.view.MainViewPager;
 
-import org.apache.http.NameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Request;
-import okhttp3.Response;
 
 /**
  * 服务材料

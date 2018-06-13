@@ -1,6 +1,5 @@
 package com.cxwl.guangxi.activity;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -13,7 +12,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.provider.Settings;
@@ -57,16 +55,16 @@ import com.cxwl.guangxi.manager.DBManager;
 import com.cxwl.guangxi.manager.DataCleanManager;
 import com.cxwl.guangxi.utils.AutoUpdateUtil;
 import com.cxwl.guangxi.utils.CommonUtil;
-import com.cxwl.guangxi.utils.CustomHttpClient;
+import com.cxwl.guangxi.utils.OkHttpUtil;
 import com.cxwl.guangxi.utils.WeatherUtil;
 import com.cxwl.guangxi.view.MainViewPager;
 import com.cxwl.guangxi.view.MyVerticalScrollView;
 
-import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -77,9 +75,12 @@ import cn.com.weather.api.WeatherAPI;
 import cn.com.weather.beans.Weather;
 import cn.com.weather.constants.Constants.Language;
 import cn.com.weather.listener.AsyncResponseHandler;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Request;
+import okhttp3.Response;
 
-@SuppressLint("SimpleDateFormat")
-public class MainActivity extends BaseActivity implements OnClickListener, AMapLocationListener{
+public class MainActivity extends BaseActivity implements OnClickListener, AMapLocationListener, MyApplication.NavigationListener{
 	
 	private Context mContext = null;
 	private TextView tvLocation = null;
@@ -147,8 +148,49 @@ public class MainActivity extends BaseActivity implements OnClickListener, AMapL
 		}else {
 			locationDialog(mContext);
 		}
+		MyApplication.setNavigationListener(this);
     }
 
+	@Override
+	public void showNavigation(boolean show) {
+		onLayoutMeasure();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		onLayoutMeasure();
+	}
+
+	/**
+	 * 判断navigation是否显示，重新计算页面布局
+	 */
+	private void onLayoutMeasure() {
+		DisplayMetrics dm = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(dm);
+		height = dm.heightPixels;
+
+		int statusBarHeight = -1;//状态栏高度
+		//获取status_bar_height资源的ID
+		int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+		if (resourceId > 0) {
+			//根据资源ID获取响应的尺寸值
+			statusBarHeight = getResources().getDimensionPixelSize(resourceId);
+		}
+
+		reTitle.measure(0, 0);
+		int height1 = reTitle.getMeasuredHeight();
+		reContent.measure(0, 0);
+		int height2 = reContent.getMeasuredHeight();
+
+		if (mAdapter != null) {
+			mAdapter.height = height-statusBarHeight-height1-height2;
+			mAdapter.notifyDataSetChanged();
+			ViewGroup.LayoutParams params = gridView.getLayoutParams();
+			params.height = height-height1-statusBarHeight;
+			gridView.setLayoutParams(params);
+		}
+	}
 
     private void locationDialog(Context context) {
 		LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -188,7 +230,7 @@ public class MainActivity extends BaseActivity implements OnClickListener, AMapL
 	 * 初始化控件
 	 */
 	private void initWidget() {
-		AutoUpdateUtil.checkUpdate(mContext, "47", getString(R.string.app_name), true);
+		AutoUpdateUtil.checkUpdate(this, mContext, "47", getString(R.string.app_name), true);
 		
 		tvLocation = (TextView) findViewById(R.id.tvLocation);
 		tvLocation.setOnClickListener(this);
@@ -464,9 +506,9 @@ public class MainActivity extends BaseActivity implements OnClickListener, AMapL
 								String warningId = queryWarningIdByCityId(cityId);
 								if (!TextUtils.isEmpty(warningId)) {
 									if (warningId.substring(0, 2).equals("45")) {
-										asyncQueryWarning("http://decision-admin.tianqi.cn/Home/extra/getwarnsguangxi", warningId);
+										OkHttpWarning("http://decision-admin.tianqi.cn/Home/extra/getwarnsguangxi", warningId);
 									}else {
-										asyncQueryWarning("http://decision-admin.tianqi.cn/Home/extra/getwarns?order=0&areaid="+warningId, warningId);
+										OkHttpWarning("http://decision-admin.tianqi.cn/Home/extra/getwarns?order=0&areaid="+warningId, warningId);
 									}
 								}
 							}
@@ -487,7 +529,6 @@ public class MainActivity extends BaseActivity implements OnClickListener, AMapL
 	/**
 	 * 初始化生活指数viewPager
 	 */
-	@SuppressWarnings("unchecked")
 	private void initIndexViewPager(WeatherDto hourDto, List<WeatherDto> weeklyList) {
 		fragments.clear();
 		Fragment fragment = new OneHourFragment();
@@ -616,233 +657,161 @@ public class MainActivity extends BaseActivity implements OnClickListener, AMapL
 	/**
 	 * 异步请求
 	 */
-	private void asyncQueryWarning(String requestUrl, String warningId) {
-		HttpAsyncTaskWarning task = new HttpAsyncTaskWarning(warningId);
-		task.setMethod("GET");
-		task.setTimeOut(CustomHttpClient.TIME_OUT);
-		task.execute(requestUrl);
-	}
-	
-	/**
-	 * 异步请求方法
-	 * @author dell
-	 *
-	 */
-	private class HttpAsyncTaskWarning extends AsyncTask<String, Void, String> {
-		private String method = "GET";
-		private List<NameValuePair> nvpList = new ArrayList<NameValuePair>();
-		private String warningId = null;
-		
-		public HttpAsyncTaskWarning(String warningId) {
-			this.warningId = warningId;
-		}
+	private void OkHttpWarning(final String url, final String warningId) {
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+					@Override
+					public void onFailure(Call call, IOException e) {
 
-		@Override
-		protected String doInBackground(String... url) {
-			String result = null;
-			if (method.equalsIgnoreCase("POST")) {
-				result = CustomHttpClient.post(url[0], nvpList);
-			} else if (method.equalsIgnoreCase("GET")) {
-				result = CustomHttpClient.get(url[0]);
-			}
-			return result;
-		}
-
-		@Override
-		protected void onPostExecute(String requestResult) {
-			super.onPostExecute(requestResult);
-			if (requestResult != null) {
-				try {
-					JSONObject object = new JSONObject(requestResult);
-					if (object != null) {
-						if (!object.isNull("data")) {
-							warningList.clear();
-							JSONArray jsonArray = object.getJSONArray("data");
-							for (int i = 0; i < jsonArray.length(); i++) {
-								JSONArray tempArray = jsonArray.getJSONArray(i);
-								WarningDto dto = new WarningDto();
-								dto.html = tempArray.optString(1);
-								String[] array = dto.html.split("-");
-								String item0 = array[0];
-								String item1 = array[1];
-								String item2 = array[2];
-								
-								dto.provinceId = item0.substring(0, 2);
-								dto.type = item2.substring(0, 5);
-								dto.color = item2.substring(5, 7);
-								dto.time = item1;
-								dto.lng = tempArray.optString(2);
-								dto.lat = tempArray.optString(3);
-								dto.name = tempArray.optString(0);
-								
-								if (!dto.name.contains("解除")) {
-									if (!TextUtils.isEmpty(warningId)) {
-										if (TextUtils.equals(warningId, item0) || TextUtils.equals(warningId.substring(0, 4)+"00", item0)) {
-											warningList.add(dto);
-										}
-									}
-								}
-							}
-							
-							if (warningList.size() > 0) {
-								tvWarning.setText("发布"+warningList.size()+"条预警");
-								tvWarning.setVisibility(View.VISIBLE);
-								
-								WarningDto dto = warningList.get(0);
-								Bitmap bitmap = null;
-						    	if (dto.color.equals(CONST.blue[0])) {
-						    		bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.blue[1]+CONST.imageSuffix);
-						    		if (bitmap == null) {
-						    			bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.blue[1]+CONST.imageSuffix);
-									}
-						    	}else if (dto.color.equals(CONST.yellow[0])) {
-						    		bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.yellow[1]+CONST.imageSuffix);
-						    		if (bitmap == null) {
-						    			bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.yellow[1]+CONST.imageSuffix);
-									}
-						    	}else if (dto.color.equals(CONST.orange[0])) {
-						    		bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.orange[1]+CONST.imageSuffix);
-						    		if (bitmap == null) {
-						    			bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.orange[1]+CONST.imageSuffix);
-									}
-						    	}else if (dto.color.equals(CONST.red[0])) {
-						    		bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.red[1]+CONST.imageSuffix);
-						    		if (bitmap == null) {
-						    			bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.red[1]+CONST.imageSuffix);
-									}
-						    	}
-						    	ivWarning.setImageBitmap(bitmap);
-						    	ivWarning.setVisibility(View.VISIBLE);
-						    	
-						    	if (TextUtils.equals(dto.provinceId, "45")) {
-									asyncQueryWarningDetail("http://decision-admin.tianqi.cn/infomes/data/nanning/decision_guangxi_yj/content2/"+dto.html);
-								}else {
-									asyncQueryWarningDetail("http://decision.tianqi.cn/alarm12379/content2/"+dto.html);
-								}
-							}
-							
-						}
 					}
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
+
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
+						}
+						final String result = response.body().string();
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								if (!TextUtils.isEmpty(result)) {
+									try {
+										JSONObject object = new JSONObject(result);
+										if (object != null) {
+											if (!object.isNull("data")) {
+												warningList.clear();
+												JSONArray jsonArray = object.getJSONArray("data");
+												for (int i = 0; i < jsonArray.length(); i++) {
+													JSONArray tempArray = jsonArray.getJSONArray(i);
+													WarningDto dto = new WarningDto();
+													dto.html = tempArray.optString(1);
+													String[] array = dto.html.split("-");
+													String item0 = array[0];
+													String item1 = array[1];
+													String item2 = array[2];
+
+													dto.provinceId = item0.substring(0, 2);
+													dto.type = item2.substring(0, 5);
+													dto.color = item2.substring(5, 7);
+													dto.time = item1;
+													dto.lng = tempArray.optString(2);
+													dto.lat = tempArray.optString(3);
+													dto.name = tempArray.optString(0);
+
+													if (!dto.name.contains("解除")) {
+														if (!TextUtils.isEmpty(warningId)) {
+															if (TextUtils.equals(warningId, item0) || TextUtils.equals(warningId.substring(0, 4)+"00", item0)) {
+																warningList.add(dto);
+															}
+														}
+													}
+												}
+
+												if (warningList.size() > 0) {
+													tvWarning.setText("发布"+warningList.size()+"条预警");
+													tvWarning.setVisibility(View.VISIBLE);
+
+													WarningDto dto = warningList.get(0);
+													Bitmap bitmap = null;
+													if (dto.color.equals(CONST.blue[0])) {
+														bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.blue[1]+CONST.imageSuffix);
+														if (bitmap == null) {
+															bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.blue[1]+CONST.imageSuffix);
+														}
+													}else if (dto.color.equals(CONST.yellow[0])) {
+														bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.yellow[1]+CONST.imageSuffix);
+														if (bitmap == null) {
+															bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.yellow[1]+CONST.imageSuffix);
+														}
+													}else if (dto.color.equals(CONST.orange[0])) {
+														bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.orange[1]+CONST.imageSuffix);
+														if (bitmap == null) {
+															bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.orange[1]+CONST.imageSuffix);
+														}
+													}else if (dto.color.equals(CONST.red[0])) {
+														bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.red[1]+CONST.imageSuffix);
+														if (bitmap == null) {
+															bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.red[1]+CONST.imageSuffix);
+														}
+													}
+													ivWarning.setImageBitmap(bitmap);
+													ivWarning.setVisibility(View.VISIBLE);
+
+													if (TextUtils.equals(dto.provinceId, "45")) {
+														OkHttpWarningDetail("http://decision-admin.tianqi.cn/infomes/data/nanning/decision_guangxi_yj/content2/"+dto.html);
+													}else {
+														OkHttpWarningDetail("http://decision.tianqi.cn/alarm12379/content2/"+dto.html);
+													}
+												}
+
+											}
+										}
+									} catch (JSONException e) {
+										e.printStackTrace();
+									}
+								}
+							}
+						});
+					}
+				});
 			}
-		}
-
-		@SuppressWarnings("unused")
-		private void setParams(NameValuePair nvp) {
-			nvpList.add(nvp);
-		}
-
-		private void setMethod(String method) {
-			this.method = method;
-		}
-
-		private void setTimeOut(int timeOut) {
-			CustomHttpClient.TIME_OUT = timeOut;
-		}
-
-		/**
-		 * 取消当前task
-		 */
-		@SuppressWarnings("unused")
-		private void cancelTask() {
-			CustomHttpClient.shuttdownRequest();
-			this.cancel(true);
-		}
+		}).start();
 	}
 	
 	/**
 	 * 异步请求
 	 */
-	private void asyncQueryWarningDetail(String requestUrl) {
+	private void OkHttpWarningDetail(final String url) {
 		proDetail.setVisibility(View.VISIBLE);
-		HttpAsyncTaskWarningDetail task = new HttpAsyncTaskWarningDetail();
-		task.setMethod("GET");
-		task.setTimeOut(CustomHttpClient.TIME_OUT);
-		task.execute(requestUrl);
-	}
-	
-	/**
-	 * 异步请求方法
-	 * @author dell
-	 *
-	 */
-	private class HttpAsyncTaskWarningDetail extends AsyncTask<String, Void, String> {
-		private String method = "GET";
-		private List<NameValuePair> nvpList = new ArrayList<NameValuePair>();
-		
-		public HttpAsyncTaskWarningDetail() {
-		}
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+					@Override
+					public void onFailure(Call call, IOException e) {
 
-		@Override
-		protected String doInBackground(String... url) {
-			String result = null;
-			if (method.equalsIgnoreCase("POST")) {
-				result = CustomHttpClient.post(url[0], nvpList);
-			} else if (method.equalsIgnoreCase("GET")) {
-				result = CustomHttpClient.get(url[0]);
-			}
-			return result;
-		}
-
-		@Override
-		protected void onPostExecute(String requestResult) {
-			super.onPostExecute(requestResult);
-			proDetail.setVisibility(View.GONE);
-			if (requestResult != null) {
-				try {
-					JSONObject object = new JSONObject(requestResult);
-					if (object != null) {
-						if (!object.isNull("description")) {
-							tvDetail.setText(object.getString("description"));
-							svDetail.setVisibility(View.VISIBLE);
-						}
 					}
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
+
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
+						}
+						final String result = response.body().string();
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								proDetail.setVisibility(View.GONE);
+								if (!TextUtils.isEmpty(result)) {
+									try {
+										JSONObject object = new JSONObject(result);
+										if (object != null) {
+											if (!object.isNull("description")) {
+												tvDetail.setText(object.getString("description"));
+												svDetail.setVisibility(View.VISIBLE);
+											}
+										}
+									} catch (JSONException e) {
+										e.printStackTrace();
+									}
+								}
+							}
+						});
+					}
+				});
 			}
-		}
-
-		@SuppressWarnings("unused")
-		private void setParams(NameValuePair nvp) {
-			nvpList.add(nvp);
-		}
-
-		private void setMethod(String method) {
-			this.method = method;
-		}
-
-		private void setTimeOut(int timeOut) {
-			CustomHttpClient.TIME_OUT = timeOut;
-		}
-
-		/**
-		 * 取消当前task
-		 */
-		@SuppressWarnings("unused")
-		private void cancelTask() {
-			CustomHttpClient.shuttdownRequest();
-			this.cancel(true);
-		}
+		}).start();
 	}
-	
-	@SuppressWarnings("unchecked")
+
 	private void initGridView() {
-		reTitle.measure(0, 0);
-		int height1 = reTitle.getMeasuredHeight();
-		reContent.measure(0, 0);
-		int height2 = reContent.getMeasuredHeight();
-		
 		channelList.clear();
 		channelList.addAll(getIntent().getExtras().<ColumnData>getParcelableArrayList("dataList"));
 		gridView = (GridView) findViewById(R.id.gridView);
-		mAdapter = new MainAdapter(mContext, channelList, height-height1-height2);
+		mAdapter = new MainAdapter(mContext, channelList);
 		gridView.setAdapter(mAdapter);
-		ViewGroup.LayoutParams params = gridView.getLayoutParams();
-		params.height = (int) ((height-height1-height2)/3*Math.ceil((double)(channelList.size()/3.0f)));
-		gridView.setLayoutParams(params);
+		onLayoutMeasure();
 		gridView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -1031,7 +1000,7 @@ public class MainActivity extends BaseActivity implements OnClickListener, AMapL
 				editor.commit();
 				startActivity(new Intent(mContext, LoginActivity.class));
 				finish();
-				MyApplication.destoryActivity("MainActivity");
+				MyApplication.destoryActivity();
 			}
 		});
 	}
@@ -1057,7 +1026,6 @@ public class MainActivity extends BaseActivity implements OnClickListener, AMapL
 		return false;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -1095,7 +1063,7 @@ public class MainActivity extends BaseActivity implements OnClickListener, AMapL
 			deleteDialog(true, getString(R.string.delete_cache), getString(R.string.sure_delete_cache), tvCache);
 			break;
 		case R.id.llVersion:
-			AutoUpdateUtil.checkUpdate(mContext, "47", getString(R.string.app_name), false);
+			AutoUpdateUtil.checkUpdate(this, mContext, "47", getString(R.string.app_name), false);
 			break;
 		case R.id.tvLogout:
 			logout(getString(R.string.logout), getString(R.string.sure_logout));

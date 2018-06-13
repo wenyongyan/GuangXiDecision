@@ -43,7 +43,6 @@ public class SevenDayFragment extends Fragment{
 		initWidget(view);
 	}
 	
-	@SuppressWarnings("unchecked")
 	private void initWidget(View v) {
 		llContainer2 = (LinearLayout) v.findViewById(R.id.llContainer2);
 		llContainer2.removeAllViews();

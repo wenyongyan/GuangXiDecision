@@ -104,26 +104,25 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="__local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/pinyin4j-2.5.0.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/scene-final.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="com.android.support:support-core-utils-25.1.1" level="project" />
-    <orderEntry type="library" exported="" name="com.android.support:animated-vector-drawable-25.1.1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/okio-1.13.0.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="com.android.support:support-annotations:25.1.1@jar" level="project" />
-    <orderEntry type="library" exported="" name="com.android.support:appcompat-v7-25.1.1" level="project" />
-    <orderEntry type="library" exported="" name="com.android.support:support-core-ui-25.1.1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/httpmime-4.1.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="com.android.support:support-media-compat-25.1.1" level="project" />
-    <orderEntry type="library" exported="" name="com.android.support:support-compat-25.1.1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/vudroid-pdfview-1.0.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/okhttp-3.8.1.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/AMap_3DMap_V4.0.1_20160923.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/MapApiServices.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/ChinaWeatherAPI.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/AMap_Location_V2.4.0_20160308.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="com.android.support:support-vector-drawable-25.1.1" level="project" />
-    <orderEntry type="library" exported="" name="com.android.support:support-v4-25.1.1" level="project" />
-    <orderEntry type="library" exported="" name="com.android.support:support-fragment-25.1.1" level="project" />
-    <orderEntry type="library" exported="" name="org.apache.http.legacy-android-25" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: __local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/pinyin4j-2.5.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-fragment-25.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: __local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/okhttp-3.8.1.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-core-ui-25.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: __local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/vudroid-pdfview-1.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-media-compat-25.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-v4-25.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: __local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/okio-1.13.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: __local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/scene-final.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.android.support:appcompat-v7-25.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: __local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/ChinaWeatherAPI.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-annotations:25.1.1@jar" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-compat-25.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.android.support:animated-vector-drawable-25.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-vector-drawable-25.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: __local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/AMap_Location_V4.0.1_20180426.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-core-utils-25.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: __local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/AMap_3DMap_V4.0.1_20160923.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: __local_jars__:/Users/shawn/AndroidStudioProjects/GuangXiDecision/app/libs/MapApiServices.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.http.legacy-android-25" level="project" />
   </component>
 </module>

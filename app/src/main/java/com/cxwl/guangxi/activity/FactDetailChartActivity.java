@@ -85,7 +85,6 @@ public class FactDetailChartActivity extends BaseActivity implements OnClickList
 	/**
 	 * 初始化viewPager
 	 */
-	@SuppressWarnings("unchecked")
 	private void initViewPager() {
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -255,93 +254,100 @@ public class FactDetailChartActivity extends BaseActivity implements OnClickList
 	/**
 	 * 获取站点数据
 	 */
-	private void OkHttpStationInfo(String url) {
-		OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+	private void OkHttpStationInfo(final String url) {
+		new Thread(new Runnable() {
 			@Override
-			public void onFailure(Call call, IOException e) {
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+					@Override
+					public void onFailure(Call call, IOException e) {
 
-			}
+					}
 
-			@Override
-			public void onResponse(Call call, Response response) throws IOException {
-				if (!response.isSuccessful()) {
-					return;
-				}
-				String result = response.body().string();
-				if (!TextUtils.isEmpty(result)) {
-					try {
-						JSONObject obj = new JSONObject(result);
-						if (!obj.isNull("rain")) {
-							rainList.clear();
-							JSONArray array = obj.getJSONArray("rain");
-							for (int i = 0; i < array.length(); i++) {
-								JSONObject itemObj = array.getJSONObject(i);
-								FactDto dto = new FactDto();
-								String value = "";
-								if (!itemObj.isNull("val")) {
-									value = itemObj.getString("val");
-									dto.factRain = Float.parseFloat(value);
-								}
-								if (!itemObj.isNull("date")) {
-									dto.factTime = itemObj.getString("date");
-								}
-								if (!value.contains("99999")) {
-									rainList.add(dto);
-								}
-							}
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
 						}
-						if (!obj.isNull("dtemp")) {
-							tempList.clear();
-							JSONArray array = obj.getJSONArray("dtemp");
-							for (int i = 0; i < array.length(); i++) {
-								JSONObject itemObj = array.getJSONObject(i);
-								FactDto dto = new FactDto();
-								String value = "";
-								if (!itemObj.isNull("val")) {
-									value = itemObj.getString("val");
-									dto.factTemp = Float.parseFloat(value);
-								}
-								if (!itemObj.isNull("date")) {
-									dto.factTime = itemObj.getString("date");
-								}
-								if (!value.contains("99999")) {
-									tempList.add(dto);
-								}
-							}
-						}
-						if (!obj.isNull("winds")) {
-							windList.clear();
-							JSONArray array = obj.getJSONArray("winds");
-							for (int i = 0; i < array.length(); i++) {
-								JSONObject itemObj = array.getJSONObject(i);
-								FactDto dto = new FactDto();
-								String value = "";
-								if (!itemObj.isNull("val")) {
-									value = itemObj.getString("val");
-									dto.factWind = Float.parseFloat(value);
-								}
-								if (!itemObj.isNull("date")) {
-									dto.factTime = itemObj.getString("date");
-								}
-								if (!value.contains("99999")) {
-									windList.add(dto);
-								}
-							}
-						}
-
+						final String result = response.body().string();
 						runOnUiThread(new Runnable() {
 							@Override
 							public void run() {
-								cancelDialog();
-								initViewPager();
+								if (!TextUtils.isEmpty(result)) {
+									try {
+										JSONObject obj = new JSONObject(result);
+										if (!obj.isNull("rain")) {
+											rainList.clear();
+											JSONArray array = obj.getJSONArray("rain");
+											for (int i = 0; i < array.length(); i++) {
+												JSONObject itemObj = array.getJSONObject(i);
+												FactDto dto = new FactDto();
+												String value = "";
+												if (!itemObj.isNull("val")) {
+													value = itemObj.getString("val");
+													dto.factRain = Float.parseFloat(value);
+												}
+												if (!itemObj.isNull("date")) {
+													dto.factTime = itemObj.getString("date");
+												}
+												if (!value.contains("99999")) {
+													rainList.add(dto);
+												}
+											}
+										}
+										if (!obj.isNull("dtemp")) {
+											tempList.clear();
+											JSONArray array = obj.getJSONArray("dtemp");
+											for (int i = 0; i < array.length(); i++) {
+												JSONObject itemObj = array.getJSONObject(i);
+												FactDto dto = new FactDto();
+												String value = "";
+												if (!itemObj.isNull("val")) {
+													value = itemObj.getString("val");
+													dto.factTemp = Float.parseFloat(value);
+												}
+												if (!itemObj.isNull("date")) {
+													dto.factTime = itemObj.getString("date");
+												}
+												if (!value.contains("99999")) {
+													tempList.add(dto);
+												}
+											}
+										}
+										if (!obj.isNull("winds")) {
+											windList.clear();
+											JSONArray array = obj.getJSONArray("winds");
+											for (int i = 0; i < array.length(); i++) {
+												JSONObject itemObj = array.getJSONObject(i);
+												FactDto dto = new FactDto();
+												String value = "";
+												if (!itemObj.isNull("val")) {
+													value = itemObj.getString("val");
+													dto.factWind = Float.parseFloat(value);
+												}
+												if (!itemObj.isNull("date")) {
+													dto.factTime = itemObj.getString("date");
+												}
+												if (!value.contains("99999")) {
+													windList.add(dto);
+												}
+											}
+										}
+
+										cancelDialog();
+										initViewPager();
+
+									} catch (JSONException e) {
+										e.printStackTrace();
+									}
+								}
 							}
 						});
-					} catch (JSONException e) {
-						e.printStackTrace();
+
 					}
-				}
+				});
 			}
-		});
+		}).start();
 	}
 
 	@Override

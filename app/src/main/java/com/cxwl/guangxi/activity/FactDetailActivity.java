@@ -51,7 +51,6 @@ public class FactDetailActivity extends BaseActivity implements OnClickListener{
 		initListView();
 	}
 
-	@SuppressWarnings("unchecked")
 	private void initWidget() {
 		llBack = (LinearLayout) findViewById(R.id.llBack);
 		llBack.setOnClickListener(this);

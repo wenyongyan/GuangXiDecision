@@ -34,6 +34,7 @@ public class FactDto implements Parcelable{
 	public String area;
 	public String area1;
 	public double val;
+	public double val1 = -1;
 	public String cityName;
 	public double lng;
 	public double lat;
@@ -87,6 +88,7 @@ public class FactDto implements Parcelable{
 		dest.writeString(this.area);
 		dest.writeString(this.area1);
 		dest.writeDouble(this.val);
+		dest.writeDouble(this.val1);
 		dest.writeString(this.cityName);
 		dest.writeDouble(this.lng);
 		dest.writeDouble(this.lat);
@@ -131,6 +133,7 @@ public class FactDto implements Parcelable{
 		this.area = in.readString();
 		this.area1 = in.readString();
 		this.val = in.readDouble();
+		this.val1 = in.readDouble();
 		this.cityName = in.readString();
 		this.lng = in.readDouble();
 		this.lat = in.readDouble();

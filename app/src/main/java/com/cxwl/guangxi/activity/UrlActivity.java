@@ -1,9 +1,5 @@
 package com.cxwl.guangxi.activity;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -19,9 +15,12 @@ import android.widget.TextView;
 
 import com.cxwl.guangxi.R;
 import com.cxwl.guangxi.common.CONST;
-import com.cxwl.guangxi.utils.CustomHttpClient;
+import com.cxwl.guangxi.utils.CommonUtil;
 import com.cxwl.guangxi.view.RefreshLayout;
 import com.cxwl.guangxi.view.RefreshLayout.OnRefreshListener;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 普通url，处理网页界面
@@ -29,7 +28,6 @@ import com.cxwl.guangxi.view.RefreshLayout.OnRefreshListener;
  *
  */
 
-@SuppressLint("SimpleDateFormat")
 public class UrlActivity extends BaseActivity implements OnClickListener{
 	
 	private LinearLayout llBack = null;
@@ -62,8 +60,8 @@ public class UrlActivity extends BaseActivity implements OnClickListener{
 			public void onRefresh() {
 				if (webView != null && !TextUtils.isEmpty(url)) {
 					//添加请求头
-					Map<String, String> extraHeaders = new HashMap<String, String>();
-					extraHeaders.put("Referer", CustomHttpClient.getRequestHeader(url));
+					Map<String, String> extraHeaders = new HashMap<>();
+					extraHeaders.put("Referer", CommonUtil.getRequestHeader(url));
 					webView.loadUrl(url, extraHeaders);
 				}
 			}
@@ -89,7 +87,6 @@ public class UrlActivity extends BaseActivity implements OnClickListener{
 	/**
 	 * 初始化webview
 	 */
-	@SuppressLint("SetJavaScriptEnabled") 
 	private void initWebView() {
 		url = getIntent().getStringExtra(CONST.WEB_URL);
 		if (TextUtils.isEmpty(url)) {
@@ -113,8 +110,8 @@ public class UrlActivity extends BaseActivity implements OnClickListener{
 //		webView.loadUrl(url);
 		
 		//添加请求头
-		Map<String, String> extraHeaders = new HashMap<String, String>();
-		extraHeaders.put("Referer", CustomHttpClient.getRequestHeader(url));
+		Map<String, String> extraHeaders = new HashMap<>();
+		extraHeaders.put("Referer", CommonUtil.getRequestHeader(url));
 		webView.loadUrl(url, extraHeaders);
 		
 		webView.setWebChromeClient(new WebChromeClient() {
@@ -131,8 +128,8 @@ public class UrlActivity extends BaseActivity implements OnClickListener{
 			@Override
 			public boolean shouldOverrideUrlLoading(WebView view, String itemUrl) {
 				url = itemUrl;
-				Map<String, String> extraHeaders = new HashMap<String, String>();
-				extraHeaders.put("Referer", CustomHttpClient.getRequestHeader(url));
+				Map<String, String> extraHeaders = new HashMap<>();
+				extraHeaders.put("Referer", CommonUtil.getRequestHeader(url));
 				webView.loadUrl(url, extraHeaders);
 				return true;
 			}

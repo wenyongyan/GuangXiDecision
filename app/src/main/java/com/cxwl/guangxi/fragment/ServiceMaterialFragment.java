@@ -104,69 +104,76 @@ public class ServiceMaterialFragment extends Fragment implements View.OnClickLis
 		});
 	}
 
-	private void OkHttpList(String url, final String name) {
-		OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+	private void OkHttpList(final String url, final String name) {
+		new Thread(new Runnable() {
 			@Override
-			public void onFailure(Call call, IOException e) {
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+					@Override
+					public void onFailure(Call call, IOException e) {
 
-			}
+					}
 
-			@Override
-			public void onResponse(Call call, Response response) throws IOException {
-				if (!response.isSuccessful()) {
-					return;
-				}
-				String result = response.body().string();
-				if (!TextUtils.isEmpty(result)) {
-					try {
-						JSONObject obj = new JSONObject(result);
-						if (!obj.isNull("info")) {
-							JSONArray array = obj.getJSONArray("info");
-							for (int i = 0; i < array.length(); i++) {
-								NewsDto dto = new NewsDto();
-								JSONObject itemObj = array.getJSONObject(i);
-								if (!itemObj.isNull("time")) {
-									dto.time = itemObj.getString("time");
-								}
-								if (!itemObj.isNull("url")) {
-									String url = itemObj.getString("url");
-									if (!TextUtils.isEmpty(url)) {
-										dto.detailUrl = url;
-										String title = url.substring(url.lastIndexOf("/")+1, url.lastIndexOf("."));
-										dto.title = title;
-										if (name.contains("服务材料")) {
-											if (TextUtils.equals(CONST.AREAID, "450000") || TextUtils.isEmpty(CONST.AREAID)) {
-												dataList.add(dto);
-											}else {
-												if (isContain(CONST.AREAID, url)) {
-													dataList.add(dto);
-												}
-											}
-										}else {
-											dataList.add(dto);
-										}
-									}
-								}
-							}
-
-							mList.clear();
-							mList.addAll(dataList);
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
 						}
-
+						final String result = response.body().string();
 						getActivity().runOnUiThread(new Runnable() {
 							@Override
 							public void run() {
-								if (mList.size() > 0 && mAdapter != null) {
-									mAdapter.notifyDataSetChanged();
+								if (!TextUtils.isEmpty(result)) {
+									try {
+										JSONObject obj = new JSONObject(result);
+										if (!obj.isNull("info")) {
+											JSONArray array = obj.getJSONArray("info");
+											for (int i = 0; i < array.length(); i++) {
+												NewsDto dto = new NewsDto();
+												JSONObject itemObj = array.getJSONObject(i);
+												if (!itemObj.isNull("time")) {
+													dto.time = itemObj.getString("time");
+												}
+												if (!itemObj.isNull("url")) {
+													String url = itemObj.getString("url");
+													if (!TextUtils.isEmpty(url)) {
+														dto.detailUrl = url;
+														String title = url.substring(url.lastIndexOf("/")+1, url.lastIndexOf("."));
+														dto.title = title;
+														if (name.contains("服务材料")) {
+															if (TextUtils.equals(CONST.AREAID, "450000") || TextUtils.isEmpty(CONST.AREAID)) {
+																dataList.add(dto);
+															}else {
+																if (isContain(CONST.AREAID, url)) {
+																	dataList.add(dto);
+																}
+															}
+														}else {
+															dataList.add(dto);
+														}
+													}
+												}
+											}
+
+											mList.clear();
+											mList.addAll(dataList);
+										}
+
+										if (mAdapter != null) {
+											mAdapter.notifyDataSetChanged();
+										}
+
+									} catch (JSONException e) {
+										e.printStackTrace();
+									}
 								}
 							}
 						});
-					} catch (JSONException e) {
-						e.printStackTrace();
+
 					}
-				}
+				});
 			}
-		});
+		}).start();
 	}
 
 	/**
@@ -251,104 +258,109 @@ public class ServiceMaterialFragment extends Fragment implements View.OnClickLis
 		return  flag;
 	}
 
-	private void OkHttpCityInfo(String url) {
-		OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+	private void OkHttpCityInfo(final String url) {
+		new Thread(new Runnable() {
 			@Override
-			public void onFailure(Call call, IOException e) {
-
-			}
-
-			@Override
-			public void onResponse(Call call, Response response) throws IOException {
-				if (!response.isSuccessful()) {
-					return;
-				}
-				final String result = response.body().string();
-				getActivity().runOnUiThread(new Runnable() {
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
 					@Override
-					public void run() {
-						if (!TextUtils.isEmpty(result)) {
-							if (TextUtils.equals(CONST.AREAID, "450000") || TextUtils.isEmpty(CONST.AREAID)) {
-								if (!TextUtils.isEmpty(result)) {
-									try {
-										groupList.clear();
-										childList.clear();
-										JSONArray array = new JSONArray(result);
-										for (int i = 0; i < array.length(); i++) {
-											JSONObject itemObj = array.getJSONObject(i);
-											CityDto data = new CityDto();
-											if (!itemObj.isNull("city")) {
-												data.cityName = itemObj.getString("city");
-											}
-											if (i == 0) {
-												tvSelect.setText(data.cityName);
-											}
-											if (!itemObj.isNull("adCode")) {
-												data.adCode = itemObj.getString("adCode");
-											}
-											if (!itemObj.isNull("areas")) {
-												List<CityDto> list = new ArrayList<>();
-												JSONArray itemArray = itemObj.getJSONArray("areas");
-												for (int j = 0; j < itemArray.length(); j++) {
-													CityDto dto = new CityDto();
-													dto.areaName = itemArray.getString(j);
-													list.add(dto);
-													if (i == 0 && j == 0) {
-														tvSelect.setText(data.cityName+" - "+dto.areaName);
-													}
-												}
-												childList.add(list);
-											}
-											groupList.add(data);
-										}
+					public void onFailure(Call call, IOException e) {
 
-										if (mAdapter2 != null) {
-											mAdapter2.notifyDataSetChanged();
-										}
-									} catch (JSONException e) {
-										e.printStackTrace();
-									}
-								}
-							}else {
+					}
+
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
+						}
+						final String result = response.body().string();
+						getActivity().runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
 								if (!TextUtils.isEmpty(result)) {
-									try {
-										groupList.clear();
-										JSONArray array = new JSONArray(result);
-										for (int i = 0; i < array.length(); i++) {
-											JSONObject itemObj = array.getJSONObject(i);
-											CityDto data = new CityDto();
-											if (!itemObj.isNull("adCode")) {
-												data.adCode = itemObj.getString("adCode");
+									if (TextUtils.equals(CONST.AREAID, "450000") || TextUtils.isEmpty(CONST.AREAID)) {
+										if (!TextUtils.isEmpty(result)) {
+											try {
+												groupList.clear();
+												childList.clear();
+												JSONArray array = new JSONArray(result);
+												for (int i = 0; i < array.length(); i++) {
+													JSONObject itemObj = array.getJSONObject(i);
+													CityDto data = new CityDto();
+													if (!itemObj.isNull("city")) {
+														data.cityName = itemObj.getString("city");
+													}
+													if (i == 0) {
+														tvSelect.setText(data.cityName);
+													}
+													if (!itemObj.isNull("adCode")) {
+														data.adCode = itemObj.getString("adCode");
+													}
+													if (!itemObj.isNull("areas")) {
+														List<CityDto> list = new ArrayList<>();
+														JSONArray itemArray = itemObj.getJSONArray("areas");
+														for (int j = 0; j < itemArray.length(); j++) {
+															CityDto dto = new CityDto();
+															dto.areaName = itemArray.getString(j);
+															list.add(dto);
+															if (i == 0 && j == 0) {
+																tvSelect.setText(data.cityName+" - "+dto.areaName);
+															}
+														}
+														childList.add(list);
+													}
+													groupList.add(data);
+												}
+
+												if (mAdapter2 != null) {
+													mAdapter2.notifyDataSetChanged();
+												}
+											} catch (JSONException e) {
+												e.printStackTrace();
 											}
-											if (TextUtils.equals(CONST.AREAID, data.adCode)) {
-												if (!itemObj.isNull("areas")) {
-													JSONArray itemArray = itemObj.getJSONArray("areas");
-													for (int j = 0; j < itemArray.length(); j++) {
-														CityDto dto = new CityDto();
-														dto.cityName = itemArray.getString(j);
-														groupList.add(dto);
-														if (j == 0) {
-															tvSelect.setText(dto.cityName);
+										}
+									}else {
+										if (!TextUtils.isEmpty(result)) {
+											try {
+												groupList.clear();
+												JSONArray array = new JSONArray(result);
+												for (int i = 0; i < array.length(); i++) {
+													JSONObject itemObj = array.getJSONObject(i);
+													CityDto data = new CityDto();
+													if (!itemObj.isNull("adCode")) {
+														data.adCode = itemObj.getString("adCode");
+													}
+													if (TextUtils.equals(CONST.AREAID, data.adCode)) {
+														if (!itemObj.isNull("areas")) {
+															JSONArray itemArray = itemObj.getJSONArray("areas");
+															for (int j = 0; j < itemArray.length(); j++) {
+																CityDto dto = new CityDto();
+																dto.cityName = itemArray.getString(j);
+																groupList.add(dto);
+																if (j == 0) {
+																	tvSelect.setText(dto.cityName);
+																}
+															}
+															break;
 														}
 													}
-													break;
 												}
+
+												if (mAdapter2 != null) {
+													mAdapter2.notifyDataSetChanged();
+												}
+											} catch (JSONException e) {
+												e.printStackTrace();
 											}
 										}
-
-										if (mAdapter2 != null) {
-											mAdapter2.notifyDataSetChanged();
-										}
-									} catch (JSONException e) {
-										e.printStackTrace();
 									}
 								}
 							}
-						}
+						});
 					}
 				});
 			}
-		});
+		}).start();
 	}
 
 	/**

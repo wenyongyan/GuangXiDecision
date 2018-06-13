@@ -4,7 +4,6 @@ package com.cxwl.guangxi.activity;
  * 天气预报
  */
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,7 +11,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.TextUtils;
@@ -33,17 +31,17 @@ import com.cxwl.guangxi.dto.WarningDto;
 import com.cxwl.guangxi.dto.WeatherDto;
 import com.cxwl.guangxi.manager.DBManager;
 import com.cxwl.guangxi.utils.CommonUtil;
-import com.cxwl.guangxi.utils.CustomHttpClient;
+import com.cxwl.guangxi.utils.OkHttpUtil;
 import com.cxwl.guangxi.utils.WeatherUtil;
 import com.cxwl.guangxi.view.CubicView;
 import com.cxwl.guangxi.view.MyVerticalScrollView;
 import com.cxwl.guangxi.view.WeeklyView;
 
-import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -54,9 +52,11 @@ import cn.com.weather.api.WeatherAPI;
 import cn.com.weather.beans.Weather;
 import cn.com.weather.constants.Constants.Language;
 import cn.com.weather.listener.AsyncResponseHandler;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Request;
+import okhttp3.Response;
 
-
-@SuppressLint("SimpleDateFormat")
 public class ForecastActivity extends BaseActivity implements OnClickListener{
 	
 	private Context mContext = null;
@@ -361,9 +361,9 @@ public class ForecastActivity extends BaseActivity implements OnClickListener{
 		String warningId = queryWarningIdByCityId(cityId);
 		if (!TextUtils.isEmpty(warningId)) {
 			if (warningId.substring(0, 2).equals("45")) {
-				asyncQueryWarning("http://decision-admin.tianqi.cn/Home/extra/getwarnsguangxi", warningId);
+				OkHttpWarning("http://decision-admin.tianqi.cn/Home/extra/getwarnsguangxi", warningId);
 			}else {
-				asyncQueryWarning("http://decision-admin.tianqi.cn/Home/extra/getwarns?order=0&areaid="+warningId, warningId);
+				OkHttpWarning("http://decision-admin.tianqi.cn/Home/extra/getwarns?order=0&areaid="+warningId, warningId);
 			}
 		}
 	}
@@ -389,219 +389,155 @@ public class ForecastActivity extends BaseActivity implements OnClickListener{
 	/**
 	 * 异步请求
 	 */
-	private void asyncQueryWarning(String requestUrl, String warningId) {
-		HttpAsyncTaskWarning task = new HttpAsyncTaskWarning(warningId);
-		task.setMethod("GET");
-		task.setTimeOut(CustomHttpClient.TIME_OUT);
-		task.execute(requestUrl);
-	}
-	
-	/**
-	 * 异步请求方法
-	 * @author dell
-	 *
-	 */
-	private class HttpAsyncTaskWarning extends AsyncTask<String, Void, String> {
-		private String method = "GET";
-		private List<NameValuePair> nvpList = new ArrayList<NameValuePair>();
-		private String warningId = null;
-		
-		public HttpAsyncTaskWarning(String warningId) {
-			this.warningId = warningId;
-		}
+	private void OkHttpWarning(final String url, final String warningId) {
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+					@Override
+					public void onFailure(Call call, IOException e) {
 
-		@Override
-		protected String doInBackground(String... url) {
-			String result = null;
-			if (method.equalsIgnoreCase("POST")) {
-				result = CustomHttpClient.post(url[0], nvpList);
-			} else if (method.equalsIgnoreCase("GET")) {
-				result = CustomHttpClient.get(url[0]);
-			}
-			return result;
-		}
-
-		@Override
-		protected void onPostExecute(String requestResult) {
-			super.onPostExecute(requestResult);
-			if (requestResult != null) {
-				try {
-					JSONObject object = new JSONObject(requestResult);
-					if (object != null) {
-						if (!object.isNull("data")) {
-							warningList.clear();
-							JSONArray jsonArray = object.getJSONArray("data");
-							for (int i = 0; i < jsonArray.length(); i++) {
-								JSONArray tempArray = jsonArray.getJSONArray(i);
-								WarningDto dto = new WarningDto();
-								dto.html = tempArray.optString(1);
-								String[] array = dto.html.split("-");
-								String item0 = array[0];
-								String item1 = array[1];
-								String item2 = array[2];
-								
-								dto.provinceId = item0.substring(0, 2);
-								dto.type = item2.substring(0, 5);
-								dto.color = item2.substring(5, 7);
-								dto.time = item1;
-								dto.lng = tempArray.optString(2);
-								dto.lat = tempArray.optString(3);
-								dto.name = tempArray.optString(0);
-								
-								if (!dto.name.contains("解除")) {
-									if (!TextUtils.isEmpty(warningId)) {
-										if (TextUtils.equals(warningId, item0) || TextUtils.equals(warningId.substring(0, 4)+"00", item0)) {
-											warningList.add(dto);
-										}
-									}
-								}
-							}
-							
-							if (warningList.size() > 0) {
-								tvWarning.setText("发布"+warningList.size()+"条预警");
-								tvWarning.setVisibility(View.VISIBLE);
-								
-								WarningDto dto = warningList.get(0);
-								Bitmap bitmap = null;
-						    	if (dto.color.equals(CONST.blue[0])) {
-						    		bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.blue[1]+CONST.imageSuffix);
-						    		if (bitmap == null) {
-						    			bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.blue[1]+CONST.imageSuffix);
-									}
-						    	}else if (dto.color.equals(CONST.yellow[0])) {
-						    		bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.yellow[1]+CONST.imageSuffix);
-						    		if (bitmap == null) {
-						    			bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.yellow[1]+CONST.imageSuffix);
-									}
-						    	}else if (dto.color.equals(CONST.orange[0])) {
-						    		bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.orange[1]+CONST.imageSuffix);
-						    		if (bitmap == null) {
-						    			bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.orange[1]+CONST.imageSuffix);
-									}
-						    	}else if (dto.color.equals(CONST.red[0])) {
-						    		bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.red[1]+CONST.imageSuffix);
-						    		if (bitmap == null) {
-						    			bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.red[1]+CONST.imageSuffix);
-									}
-						    	}
-						    	ivWarning.setImageBitmap(bitmap);
-						    	ivWarning.setVisibility(View.VISIBLE);
-						    	
-						    	if (TextUtils.equals(dto.provinceId, "45")) {
-									asyncQueryWarningDetail("http://decision-admin.tianqi.cn/infomes/data/nanning/decision_guangxi_yj/content2/"+dto.html);
-								}else {
-									asyncQueryWarningDetail("http://decision.tianqi.cn/alarm12379/content2/"+dto.html);
-								}
-							}
-							
-						}
 					}
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
+
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
+						}
+						final String result = response.body().string();
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								if (!TextUtils.isEmpty(result)) {
+									try {
+										JSONObject object = new JSONObject(result);
+										if (object != null) {
+											if (!object.isNull("data")) {
+												warningList.clear();
+												JSONArray jsonArray = object.getJSONArray("data");
+												for (int i = 0; i < jsonArray.length(); i++) {
+													JSONArray tempArray = jsonArray.getJSONArray(i);
+													WarningDto dto = new WarningDto();
+													dto.html = tempArray.optString(1);
+													String[] array = dto.html.split("-");
+													String item0 = array[0];
+													String item1 = array[1];
+													String item2 = array[2];
+
+													dto.provinceId = item0.substring(0, 2);
+													dto.type = item2.substring(0, 5);
+													dto.color = item2.substring(5, 7);
+													dto.time = item1;
+													dto.lng = tempArray.optString(2);
+													dto.lat = tempArray.optString(3);
+													dto.name = tempArray.optString(0);
+
+													if (!dto.name.contains("解除")) {
+														if (!TextUtils.isEmpty(warningId)) {
+															if (TextUtils.equals(warningId, item0) || TextUtils.equals(warningId.substring(0, 4)+"00", item0)) {
+																warningList.add(dto);
+															}
+														}
+													}
+												}
+
+												if (warningList.size() > 0) {
+													tvWarning.setText("发布"+warningList.size()+"条预警");
+													tvWarning.setVisibility(View.VISIBLE);
+
+													WarningDto dto = warningList.get(0);
+													Bitmap bitmap = null;
+													if (dto.color.equals(CONST.blue[0])) {
+														bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.blue[1]+CONST.imageSuffix);
+														if (bitmap == null) {
+															bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.blue[1]+CONST.imageSuffix);
+														}
+													}else if (dto.color.equals(CONST.yellow[0])) {
+														bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.yellow[1]+CONST.imageSuffix);
+														if (bitmap == null) {
+															bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.yellow[1]+CONST.imageSuffix);
+														}
+													}else if (dto.color.equals(CONST.orange[0])) {
+														bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.orange[1]+CONST.imageSuffix);
+														if (bitmap == null) {
+															bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.orange[1]+CONST.imageSuffix);
+														}
+													}else if (dto.color.equals(CONST.red[0])) {
+														bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+dto.type+CONST.red[1]+CONST.imageSuffix);
+														if (bitmap == null) {
+															bitmap = CommonUtil.getImageFromAssetsFile(mContext,"warning/"+"default"+CONST.red[1]+CONST.imageSuffix);
+														}
+													}
+													ivWarning.setImageBitmap(bitmap);
+													ivWarning.setVisibility(View.VISIBLE);
+
+													if (TextUtils.equals(dto.provinceId, "45")) {
+														OkHttpWarningDetail("http://decision-admin.tianqi.cn/infomes/data/nanning/decision_guangxi_yj/content2/"+dto.html);
+													}else {
+														OkHttpWarningDetail("http://decision.tianqi.cn/alarm12379/content2/"+dto.html);
+													}
+												}
+
+											}
+										}
+									} catch (JSONException e) {
+										e.printStackTrace();
+									}
+								}
+							}
+						});
+					}
+				});
 			}
-		}
-
-		@SuppressWarnings("unused")
-		private void setParams(NameValuePair nvp) {
-			nvpList.add(nvp);
-		}
-
-		private void setMethod(String method) {
-			this.method = method;
-		}
-
-		private void setTimeOut(int timeOut) {
-			CustomHttpClient.TIME_OUT = timeOut;
-		}
-
-		/**
-		 * 取消当前task
-		 */
-		@SuppressWarnings("unused")
-		private void cancelTask() {
-			CustomHttpClient.shuttdownRequest();
-			this.cancel(true);
-		}
+		}).start();
 	}
 	
 	/**
 	 * 异步请求
 	 */
-	private void asyncQueryWarningDetail(String requestUrl) {
+	private void OkHttpWarningDetail(final String url) {
 		proDetail.setVisibility(View.VISIBLE);
-		HttpAsyncTaskWarningDetail task = new HttpAsyncTaskWarningDetail();
-		task.setMethod("GET");
-		task.setTimeOut(CustomHttpClient.TIME_OUT);
-		task.execute(requestUrl);
-	}
-	
-	/**
-	 * 异步请求方法
-	 * @author dell
-	 *
-	 */
-	private class HttpAsyncTaskWarningDetail extends AsyncTask<String, Void, String> {
-		private String method = "GET";
-		private List<NameValuePair> nvpList = new ArrayList<NameValuePair>();
-		
-		public HttpAsyncTaskWarningDetail() {
-		}
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+					@Override
+					public void onFailure(Call call, IOException e) {
 
-		@Override
-		protected String doInBackground(String... url) {
-			String result = null;
-			if (method.equalsIgnoreCase("POST")) {
-				result = CustomHttpClient.post(url[0], nvpList);
-			} else if (method.equalsIgnoreCase("GET")) {
-				result = CustomHttpClient.get(url[0]);
-			}
-			return result;
-		}
-
-		@Override
-		protected void onPostExecute(String requestResult) {
-			super.onPostExecute(requestResult);
-			proDetail.setVisibility(View.GONE);
-			if (requestResult != null) {
-				try {
-					JSONObject object = new JSONObject(requestResult);
-					if (object != null) {
-						if (!object.isNull("description")) {
-							tvDetail.setText(object.getString("description"));
-							svDetail.setVisibility(View.VISIBLE);
-						}
 					}
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
+
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+
+						if (!response.isSuccessful()) {
+							return;
+						}
+						final String result = response.body().string();
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								proDetail.setVisibility(View.GONE);
+								if (!TextUtils.isEmpty(result)) {
+									try {
+										JSONObject object = new JSONObject(result);
+										if (object != null) {
+											if (!object.isNull("description")) {
+												tvDetail.setText(object.getString("description"));
+												svDetail.setVisibility(View.VISIBLE);
+											}
+										}
+									} catch (JSONException e) {
+										e.printStackTrace();
+									}
+								}
+							}
+						});
+					}
+				});
 			}
-		}
-
-		@SuppressWarnings("unused")
-		private void setParams(NameValuePair nvp) {
-			nvpList.add(nvp);
-		}
-
-		private void setMethod(String method) {
-			this.method = method;
-		}
-
-		private void setTimeOut(int timeOut) {
-			CustomHttpClient.TIME_OUT = timeOut;
-		}
-
-		/**
-		 * 取消当前task
-		 */
-		@SuppressWarnings("unused")
-		private void cancelTask() {
-			CustomHttpClient.shuttdownRequest();
-			this.cancel(true);
-		}
+		});
 	}
-	
-	@SuppressWarnings("unchecked")
+
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {

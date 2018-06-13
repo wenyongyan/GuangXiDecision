@@ -34,7 +34,7 @@ public class IntroduceActivity extends BaseActivity implements OnClickListener{
 	private RelativeLayout re1, re2, re3;
 	private TextView tv1, tv2, tv3, tv11, tv12, tv13;
 	private MainViewPager viewPager = null;
-	private List<Fragment> fragments = new ArrayList<Fragment>();
+	private List<Fragment> fragments = new ArrayList<>();
 	private String title1 = "广西地形地貌及水系水库分布";
 	private String title2 = "广西气候概况及主要气象灾害";
 	private String title3 = "综合气象观测系统建设";

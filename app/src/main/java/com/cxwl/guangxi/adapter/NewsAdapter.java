@@ -55,7 +55,7 @@ public class NewsAdapter extends BaseAdapter{
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		if (convertView == null) {
-			convertView = mInflater.inflate(R.layout.news_cell, null);
+			convertView = mInflater.inflate(R.layout.adapter_news, null);
 			mHolder = new ViewHolder();
 			mHolder.imageView = (ImageView) convertView.findViewById(R.id.imageView);
 			mHolder.tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);

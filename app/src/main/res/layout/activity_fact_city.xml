@@ -2,110 +2,103 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/white"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
     <RelativeLayout
-                    android:id="@+id/reTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/title_bg"
-                    android:orientation="vertical" >
+        android:id="@+id/reTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/title_bg"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvBlank"
-            android:layout_width="match_parent"
-            android:layout_height="24dp" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/llBack"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvBlank" >
-
-            <LinearLayout
-                android:id="@+id/llBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:paddingBottom="12dp"
-                android:paddingTop="12dp"
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                android:gravity="center_vertical" >
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/iv_back" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:text="@string/back"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/level_4" />
-
-                <TextView
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="0.5dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"/>
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/llBack"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/level_3" />
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:paddingBottom="12dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="12dp">
 
             <ImageView
-                android:visibility="gone"
-                android:id="@+id/ivControl"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/iv_warning_list"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true">
+                android:src="@drawable/iv_back"/>
 
             <TextView
-                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/level_4"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/divider"
+            android:layout_toRightOf="@+id/llBack"
+            android:layout_width="0.5dp"
+            android:layout_height="15dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/divider"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/level_4"/>
+
+        <ImageView
+            android:id="@+id/ivControl"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/iv_warning_list"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
                 android:id="@+id/tvControl2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="12dp"
-                android:paddingTop="12dp"
-                android:paddingRight="10dp"
                 android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="12dp"
                 android:textColor="@color/white"
-                android:textSize="@dimen/level_4" />
+                android:textSize="@dimen/level_4"
+                android:visibility="gone"/>
 
             <TextView
-                android:visibility="gone"
                 android:id="@+id/tvControl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="12dp"
-                android:paddingTop="12dp"
-                android:paddingRight="10dp"
                 android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="12dp"
                 android:textColor="@color/white"
-                android:textSize="@dimen/level_4" />
+                android:textSize="@dimen/level_4"
+                android:visibility="gone"/>
 
-            </LinearLayout>
-        </RelativeLayout>
+        </LinearLayout>
 
     </RelativeLayout>
 
@@ -148,11 +141,11 @@
         android:layout_below="@+id/hScrollView2"
         android:background="@color/title_bg"/>
 
-        <com.amap.api.maps.MapView
-            android:layout_below="@+id/d"
-            android:id="@+id/mapView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <com.amap.api.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/d"/>
 
     <TextView
         android:id="@+id/tvLayerName"
@@ -180,8 +173,8 @@
         android:id="@+id/tvIntro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#60000000"
         android:layout_alignParentBottom="true"
+        android:background="#60000000"
         android:lineSpacingExtra="2dp"
         android:paddingBottom="5dp"
         android:paddingLeft="10dp"
@@ -208,109 +201,109 @@
         android:visibility="gone"/>
 
     <ScrollView
-        android:background="@color/white"
-        android:visibility="gone"
-        android:layout_below="@+id/reTitle"
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none"
-        android:overScrollMode="never">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-    <LinearLayout
-        android:id="@+id/listTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#a6c4e0"
-        android:orientation="horizontal"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp" >
-
-        <LinearLayout
-            android:id="@+id/ll1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="10dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/tv1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="@dimen/level_5" />
-
-            <ImageView
-                android:id="@+id/iv1"
-                android:layout_width="@dimen/level_5"
-                android:layout_height="@dimen/level_5"
-                android:visibility="invisible" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.3"
-            android:gravity="center_vertical|center"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/tv2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="@dimen/level_5" />
-
-            <ImageView
-                android:id="@+id/iv2"
-                android:layout_width="@dimen/level_5"
-                android:layout_height="@dimen/level_5"
-                android:visibility="invisible" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.3"
-            android:gravity="center_vertical|center"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/tv3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="@dimen/level_5" />
-
-            <ImageView
-                android:id="@+id/iv3"
-                android:layout_width="@dimen/level_5"
-                android:layout_height="@dimen/level_5"
-                android:visibility="invisible" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:cacheColorHint="@color/transparent"
-        android:divider="@null"
-        android:dividerHeight="0.0dip"
-        android:listSelector="@color/transparent"
+        android:layout_below="@+id/reTitle"
+        android:background="@color/white"
         android:overScrollMode="never"
-        android:scrollbars="none" />
+        android:scrollbars="none"
+        android:visibility="gone">
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/listTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#a6c4e0"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+
+                <LinearLayout
+                    android:id="@+id/ll1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp">
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/level_5"/>
+
+                    <ImageView
+                        android:id="@+id/iv1"
+                        android:layout_width="@dimen/level_5"
+                        android:layout_height="@dimen/level_5"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.3"
+                    android:gravity="center_vertical|center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/level_5"/>
+
+                    <ImageView
+                        android:id="@+id/iv2"
+                        android:layout_width="@dimen/level_5"
+                        android:layout_height="@dimen/level_5"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.3"
+                    android:gravity="center_vertical|center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/level_5"/>
+
+                    <ImageView
+                        android:id="@+id/iv3"
+                        android:layout_width="@dimen/level_5"
+                        android:layout_height="@dimen/level_5"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cacheColorHint="@color/transparent"
+                android:divider="@null"
+                android:dividerHeight="0.0dip"
+                android:listSelector="@color/transparent"
+                android:overScrollMode="never"
+                android:scrollbars="none"/>
+
+        </LinearLayout>
     </ScrollView>
 
     <ProgressBar
@@ -320,8 +313,8 @@
         android:layout_height="40dp"
         android:layout_centerInParent="true"
         android:background="@drawable/corner_dialog"
-        android:padding="8dp"
         android:indeterminateDrawable="@anim/anim_loading_white"
+        android:padding="8dp"
         android:visibility="gone"/>
 
 </RelativeLayout>

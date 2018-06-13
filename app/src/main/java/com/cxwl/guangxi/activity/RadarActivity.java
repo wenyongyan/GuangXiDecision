@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -30,15 +29,15 @@ import com.cxwl.guangxi.common.CONST;
 import com.cxwl.guangxi.dto.RadarDto;
 import com.cxwl.guangxi.manager.RadarManager;
 import com.cxwl.guangxi.manager.RadarManager.RadarListener;
-import com.cxwl.guangxi.utils.CustomHttpClient;
+import com.cxwl.guangxi.utils.OkHttpUtil;
 
 import net.tsz.afinal.FinalBitmap;
 
-import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.net.URLEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -49,13 +48,17 @@ import java.util.List;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
-@SuppressLint("SimpleDateFormat")
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Request;
+import okhttp3.Response;
+
 public class RadarActivity extends BaseActivity implements OnClickListener, RadarListener{
 	
 	private Context mContext = null;
 	private LinearLayout llBack = null;//返回按钮
 	private TextView tvTitle = null;
-	private List<RadarDto> radarList = new ArrayList<RadarDto>();
+	private List<RadarDto> radarList = new ArrayList<>();
 	private ImageView imageView = null;
 	private TextView tvPercent = null;
 	private String baseUrl = "http://hfapi.tianqi.cn/data/";
@@ -133,8 +136,8 @@ public class RadarActivity extends BaseActivity implements OnClickListener, Rada
 				dto.isSelect = item[2];
 				mList.add(dto);
 			}
-			
-			getRadarData(mList.get(0).radarCode, sdf3.format(new Date()));
+
+			OkHttpRadarData(mList.get(0).radarCode, sdf3.format(new Date()));
 		}
 		
 		mGridView = (GridView) findViewById(R.id.gridView);
@@ -162,7 +165,7 @@ public class RadarActivity extends BaseActivity implements OnClickListener, Rada
 				
 				tvPercent.setText("0%");
 				RadarDto dto = mList.get(arg2);
-				getRadarData(dto.radarCode, sdf3.format(new Date()));
+				OkHttpRadarData(dto.radarCode, sdf3.format(new Date()));
 			}
 		});
 	}
@@ -210,107 +213,77 @@ public class RadarActivity extends BaseActivity implements OnClickListener, Rada
 	/**
 	 * 获取雷达图片集信息
 	 */
-	private void getRadarData(String radarCode, String currentTime) {
-		HttpAsyncTask task = new HttpAsyncTask();
-		task.setMethod("GET");
-		task.setTimeOut(CustomHttpClient.TIME_OUT);
-		task.execute(getRadarUrl(baseUrl, radarCode, "product", currentTime));
-	}
-	
-	/**
-	 * 异步请求方法
-	 * @author dell
-	 *
-	 */
-	private class HttpAsyncTask extends AsyncTask<String, Void, String> {
-		private String method = "GET";
-		private List<NameValuePair> nvpList = new ArrayList<NameValuePair>();
-		
-		public HttpAsyncTask() {
-		}
+	private void OkHttpRadarData(String radarCode, String currentTime) {
+		final String url = getRadarUrl(baseUrl, radarCode, "product", currentTime);
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+					@Override
+					public void onFailure(Call call, IOException e) {
 
-		@Override
-		protected String doInBackground(String... url) {
-			String result = null;
-			if (method.equalsIgnoreCase("POST")) {
-				result = CustomHttpClient.post(url[0], nvpList);
-			} else if (method.equalsIgnoreCase("GET")) {
-				result = CustomHttpClient.get(url[0]);
-			}
-			return result;
-		}
-
-		@Override
-		protected void onPostExecute(String result) {
-			super.onPostExecute(result);
-			cancelDialog();
-			radarList.clear();
-			if (result != null) {
-				try {
-					JSONObject obj = new JSONObject(result.toString());
-					String r2 = obj.getString("r2");
-					String r3 = obj.getString("r3");
-					String[] temp = obj.getString("r4").split("\\|");
-					String r4 = temp[0];
-					String r5 = obj.getString("r5");
-					JSONArray array = new JSONArray(obj.getString("r6"));
-					for (int i = array.length()-1; i >= 0 ; i--) {
-						JSONArray itemArray = array.getJSONArray(i);
-						String r6_0 = itemArray.getString(0);
-						String r6_1 = itemArray.getString(1);
-						
-						String url = r2 + r4 + "/" + r5 + r6_0 + "." + r3;
-						
-						if (i == 0 && !TextUtils.isEmpty(url)) {
-							FinalBitmap finalBitmap = FinalBitmap.create(mContext);
-							finalBitmap.display(imageView, url, null, 0);
-							try {
-								tvTime.setText(sdf1.format(sdf2.parse(r6_1)));
-							} catch (ParseException e) {
-								e.printStackTrace();
-							}
-						}
-						
-						RadarDto dto = new RadarDto();
-						if (i == 0) {
-							dto.isSelect = "1";
-						}else {
-							dto.isSelect = "0";
-						}
-						dto.url = url;
-						dto.time = r6_1;
-						radarList.add(dto);
 					}
-						
-					reContent.setVisibility(View.VISIBLE);
-					cancelDialog();
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
+
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
+						}
+						final String result = response.body().string();
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								cancelDialog();
+								radarList.clear();
+								if (!TextUtils.isEmpty(result)) {
+									try {
+										JSONObject obj = new JSONObject(result);
+										String r2 = obj.getString("r2");
+										String r3 = obj.getString("r3");
+										String[] temp = obj.getString("r4").split("\\|");
+										String r4 = temp[0];
+										String r5 = obj.getString("r5");
+										JSONArray array = new JSONArray(obj.getString("r6"));
+										for (int i = array.length()-1; i >= 0 ; i--) {
+											JSONArray itemArray = array.getJSONArray(i);
+											String r6_0 = itemArray.getString(0);
+											String r6_1 = itemArray.getString(1);
+
+											String url = r2 + r4 + "/" + r5 + r6_0 + "." + r3;
+
+											if (i == 0 && !TextUtils.isEmpty(url)) {
+												FinalBitmap finalBitmap = FinalBitmap.create(mContext);
+												finalBitmap.display(imageView, url, null, 0);
+												try {
+													tvTime.setText(sdf1.format(sdf2.parse(r6_1)));
+												} catch (ParseException e) {
+													e.printStackTrace();
+												}
+											}
+
+											RadarDto dto = new RadarDto();
+											if (i == 0) {
+												dto.isSelect = "1";
+											}else {
+												dto.isSelect = "0";
+											}
+											dto.url = url;
+											dto.time = r6_1;
+											radarList.add(dto);
+										}
+
+										reContent.setVisibility(View.VISIBLE);
+										cancelDialog();
+									} catch (JSONException e) {
+										e.printStackTrace();
+									}
+								}
+							}
+						});
+					}
+				});
 			}
-		}
-
-		@SuppressWarnings("unused")
-		private void setParams(NameValuePair nvp) {
-			nvpList.add(nvp);
-		}
-
-		private void setMethod(String method) {
-			this.method = method;
-		}
-
-		private void setTimeOut(int timeOut) {
-			CustomHttpClient.TIME_OUT = timeOut;
-		}
-
-		/**
-		 * 取消当前task
-		 */
-		@SuppressWarnings("unused")
-		private void cancelTask() {
-			CustomHttpClient.shuttdownRequest();
-			this.cancel(true);
-		}
+		}).start();
 	}
 	
 	private void startDownLoadImgs(List<RadarDto> list) {

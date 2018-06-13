@@ -1,10 +1,8 @@
 package com.cxwl.guangxi.activity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -36,15 +34,15 @@ import com.amap.api.services.district.DistrictSearchQuery;
 import com.cxwl.guangxi.R;
 import com.cxwl.guangxi.common.CONST;
 import com.cxwl.guangxi.dto.CityDto;
-import com.cxwl.guangxi.utils.CustomHttpClient;
+import com.cxwl.guangxi.utils.OkHttpUtil;
 import com.cxwl.guangxi.utils.WeatherUtil;
 import com.cxwl.guangxi.view.ExpandableTextView;
 
-import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -55,6 +53,10 @@ import cn.com.weather.api.WeatherAPI;
 import cn.com.weather.beans.Weather;
 import cn.com.weather.constants.Constants.Language;
 import cn.com.weather.listener.AsyncResponseHandler;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * 天气预报
@@ -62,8 +64,7 @@ import cn.com.weather.listener.AsyncResponseHandler;
  *
  */
 
-@SuppressLint("SimpleDateFormat")
-public class WeatherActivity extends BaseActivity implements OnClickListener, OnMarkerClickListener, OnMapClickListener, 
+public class WeatherActivity extends BaseActivity implements OnClickListener, OnMarkerClickListener, OnMapClickListener,
 InfoWindowAdapter, OnCameraChangeListener, OnDistrictSearchListener{
 	
 	private Context mContext = null;
@@ -71,10 +72,10 @@ InfoWindowAdapter, OnCameraChangeListener, OnDistrictSearchListener{
 	private TextView tvTitle = null;
 	private MapView mapView = null;//高德地图
 	private AMap aMap = null;//高德地图
-	private List<CityDto> cityList1 = new ArrayList<CityDto>();//市级
-	private List<CityDto> cityList2 = new ArrayList<CityDto>();//区县级
-	private List<Marker> markerList1 = new ArrayList<Marker>();
-	private List<Marker> markerList2 = new ArrayList<Marker>();
+	private List<CityDto> cityList1 = new ArrayList<>();//市级
+	private List<CityDto> cityList2 = new ArrayList<>();//区县级
+	private List<Marker> markerList1 = new ArrayList<>();
+	private List<Marker> markerList2 = new ArrayList<>();
 	private Marker selectMarker = null;
 	private SimpleDateFormat sdf1 = new SimpleDateFormat("yyyyMMdd");
 	private SimpleDateFormat sdf2 = new SimpleDateFormat("MM月dd日");
@@ -109,7 +110,7 @@ InfoWindowAdapter, OnCameraChangeListener, OnDistrictSearchListener{
 		
 		String url = getIntent().getStringExtra(CONST.WEB_URL);
 		if (!TextUtils.isEmpty(url)) {
-			asyncQuery(url);
+			OkHttpList(url);
 		}
     }
 	
@@ -192,113 +193,82 @@ InfoWindowAdapter, OnCameraChangeListener, OnDistrictSearchListener{
 	/**
 	 * 异步请求
 	 */
-	private void asyncQuery(String requestUrl) {
-		HttpAsyncTask task = new HttpAsyncTask();
-		task.setMethod("GET");
-		task.setTimeOut(CustomHttpClient.TIME_OUT);
-		task.execute(requestUrl);
-	}
-	
-	/**
-	 * 异步请求方法
-	 * @author dell
-	 *
-	 */
-	private class HttpAsyncTask extends AsyncTask<String, Void, String> {
-		private String method = "GET";
-		private List<NameValuePair> nvpList = new ArrayList<NameValuePair>();
-		
-		public HttpAsyncTask() {
-		}
+	private void OkHttpList(final String url) {
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+					@Override
+					public void onFailure(Call call, IOException e) {
 
-		@Override
-		protected String doInBackground(String... url) {
-			String result = null;
-			if (method.equalsIgnoreCase("POST")) {
-				result = CustomHttpClient.post(url[0], nvpList);
-			} else if (method.equalsIgnoreCase("GET")) {
-				result = CustomHttpClient.get(url[0]);
-			}
-			return result;
-		}
+					}
 
-		@Override
-		protected void onPostExecute(String requestResult) {
-			super.onPostExecute(requestResult);
-			if (!TextUtils.isEmpty(requestResult)) {
-				try {
-					JSONObject obj = new JSONObject(requestResult);
-					if (!obj.isNull("txts")) {
-						JSONArray array = obj.getJSONArray("txts");
-						String content = "";
-						for (int i = 0; i < array.length(); i++) {
-							if (!TextUtils.isEmpty(array.getString(i))) {
-								if (i == array.length()-1) {
-									content = content+array.getString(i);
-								}else {
-									if (i % 2 == 0) {
-										content = content+array.getString(i)+"\n";
-									}else if (i % 2 == 1) {
-										content = content+array.getString(i)+"\n\n";
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
+						}
+						final String result = response.body().string();
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								if (!TextUtils.isEmpty(result)) {
+									try {
+										JSONObject obj = new JSONObject(result);
+										if (!obj.isNull("txts")) {
+											JSONArray array = obj.getJSONArray("txts");
+											String content = "";
+											for (int i = 0; i < array.length(); i++) {
+												if (!TextUtils.isEmpty(array.getString(i))) {
+													if (i == array.length()-1) {
+														content = content+array.getString(i);
+													}else {
+														if (i % 2 == 0) {
+															content = content+array.getString(i)+"\n";
+														}else if (i % 2 == 1) {
+															content = content+array.getString(i)+"\n\n";
+														}
+													}
+												}
+											}
+											llContainer.setText(content);
+											llContainer.setVisibility(View.VISIBLE);
+										}
+										if (!obj.isNull("cityInfos")) {
+											cityList1.clear();
+											cityList2.clear();
+											List<String> cityIds = new ArrayList<String>();
+											JSONArray array = obj.getJSONArray("cityInfos");
+											for (int i = 0; i < array.length(); i++) {
+												CityDto dto = new CityDto();
+												JSONArray itemArray = array.getJSONArray(i);
+												dto.cityId = itemArray.getString(0);
+												dto.cityName = itemArray.getString(1);
+												dto.lat = Double.valueOf(itemArray.getString(2));
+												dto.lng = Double.valueOf(itemArray.getString(3));
+												dto.level = itemArray.getString(4);
+
+												if (TextUtils.equals(dto.level, "1")) {
+													cityIds.add(dto.cityId);
+													cityList1.add(dto);
+												}else {
+													cityList2.add(dto);
+												}
+											}
+
+											addMarker(cityList2, "2");
+											getWeatherInfos(cityIds, cityList1);
+										}
+									} catch (JSONException e) {
+										e.printStackTrace();
 									}
 								}
 							}
-						}
-						llContainer.setText(content);
-						llContainer.setVisibility(View.VISIBLE);
+						});
 					}
-					if (!obj.isNull("cityInfos")) {
-						cityList1.clear();
-						cityList2.clear();
-						List<String> cityIds = new ArrayList<String>();
-						JSONArray array = obj.getJSONArray("cityInfos");
-						for (int i = 0; i < array.length(); i++) {
-							CityDto dto = new CityDto();
-							JSONArray itemArray = array.getJSONArray(i);
-							dto.cityId = itemArray.getString(0);
-							dto.cityName = itemArray.getString(1);
-							dto.lat = Double.valueOf(itemArray.getString(2));
-							dto.lng = Double.valueOf(itemArray.getString(3));
-							dto.level = itemArray.getString(4);
-							
-							if (TextUtils.equals(dto.level, "1")) {
-								cityIds.add(dto.cityId);
-								cityList1.add(dto);
-							}else {
-								cityList2.add(dto);
-							}
-						}
-						
-						addMarker(cityList2, "2");
-						getWeatherInfos(cityIds, cityList1);
-					}
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
+				});
 			}
-		}
-
-		@SuppressWarnings("unused")
-		private void setParams(NameValuePair nvp) {
-			nvpList.add(nvp);
-		}
-
-		private void setMethod(String method) {
-			this.method = method;
-		}
-
-		private void setTimeOut(int timeOut) {
-			CustomHttpClient.TIME_OUT = timeOut;
-		}
-
-		/**
-		 * 取消当前task
-		 */
-		@SuppressWarnings("unused")
-		private void cancelTask() {
-			CustomHttpClient.shuttdownRequest();
-			this.cancel(true);
-		}
+		}).start();
 	}
 	
 	/**
@@ -392,7 +362,6 @@ InfoWindowAdapter, OnCameraChangeListener, OnDistrictSearchListener{
 	
 	/**
 	 * 给marker添加文字
-	 * @param name 城市名称
 	 * @return
 	 */
 	private View getTextBitmap1(CityDto dto) {      

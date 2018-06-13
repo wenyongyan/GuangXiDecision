@@ -122,114 +122,125 @@ public class RegisterActivity extends BaseActivity implements OnClickListener{
 	/**
 	 * 用户注册
 	 */
-	private void OkHttpRegister(String url) {
+	private void OkHttpRegister(final String url) {
 		FormBody.Builder builder = new FormBody.Builder();
 		builder.add("username", etPhone.getText().toString());
 		builder.add("password", etPwd.getText().toString());
 		builder.add("appid", com.cxwl.guangxi.common.CONST.APPID);
 		builder.add("department", etUnit.getText().toString());
 		builder.add("area", areaId);
-		RequestBody body = builder.build();
-		OkHttpUtil.enqueue(new Request.Builder().post(body).url(url).build(), new Callback() {
+		final RequestBody body = builder.build();
+		new Thread(new Runnable() {
 			@Override
-			public void onFailure(Call call, IOException e) {
-
-			}
-
-			@Override
-			public void onResponse(Call call, Response response) throws IOException {
-				if (!response.isSuccessful()) {
-					return;
-				}
-				final String result = response.body().string();
-				runOnUiThread(new Runnable() {
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().post(body).url(url).build(), new Callback() {
 					@Override
-					public void run() {
-						if (!TextUtils.isEmpty(result)) {
-							try {
-								JSONObject object = new JSONObject(result);
-								if (object != null) {
-									if (!object.isNull("status")) {
-										int status  = object.getInt("status");
-										if (status == 1) {//成功
-											Intent intent = new Intent();
-											intent.putExtra("userName", etPhone.getText().toString());
-											intent.putExtra("pwd", etPwd.getText().toString());
-											setResult(RESULT_OK, intent);
-											finish();
-										}else {
-											//失败
-											if (!object.isNull("msg")) {
-												String msg = object.getString("msg");
-												if (msg != null) {
-													Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+					public void onFailure(Call call, IOException e) {
+
+					}
+
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
+						}
+						final String result = response.body().string();
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								if (!TextUtils.isEmpty(result)) {
+									try {
+										JSONObject object = new JSONObject(result);
+										if (object != null) {
+											if (!object.isNull("status")) {
+												int status  = object.getInt("status");
+												if (status == 1) {//成功
+													Intent intent = new Intent();
+													intent.putExtra("userName", etPhone.getText().toString());
+													intent.putExtra("pwd", etPwd.getText().toString());
+													setResult(RESULT_OK, intent);
+													finish();
+												}else {
+													//失败
+													if (!object.isNull("msg")) {
+														String msg = object.getString("msg");
+														if (msg != null) {
+															Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+														}
+													}
 												}
+												cancelDialog();
 											}
 										}
-										cancelDialog();
+									} catch (JSONException e) {
+										e.printStackTrace();
 									}
 								}
-							} catch (JSONException e) {
-								e.printStackTrace();
 							}
-						}
+						});
+
 					}
 				});
-
 			}
-		});
+		}).start();
 	}
 	
 	/**
 	 * 获取关注区域列表
 	 */
-	private void OkHttpArea(String url) {
+	private void OkHttpArea(final String url) {
 		FormBody.Builder builder = new FormBody.Builder();
 		builder.add("province", "广西");
-		RequestBody body = builder.build();
-		OkHttpUtil.enqueue(new Request.Builder().post(body).url(url).build(), new Callback() {
+		final RequestBody body = builder.build();
+		new Thread(new Runnable() {
 			@Override
-			public void onFailure(Call call, IOException e) {
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().post(body).url(url).build(), new Callback() {
+					@Override
+					public void onFailure(Call call, IOException e) {
 
-			}
+					}
 
-			@Override
-			public void onResponse(Call call, Response response) throws IOException {
-				if (!response.isSuccessful()) {
-					return;
-				}
-				String result = response.body().string();
-				if (!TextUtils.isEmpty(result)) {
-					try {
-						areaList.clear();
-						JSONArray array = new JSONArray(result);
-						for (int i = 0; i < array.length(); i++) {
-							JSONObject itemObj = array.getJSONObject(i);
-							CityDto dto = new CityDto();
-							if (!itemObj.isNull("id")) {
-								dto.areaId = itemObj.getString("id");
-							}
-							if (!itemObj.isNull("city")) {
-								dto.areaName = itemObj.getString("city");
-							}
-							areaList.add(dto);
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
 						}
-
+						final String result = response.body().string();
 						runOnUiThread(new Runnable() {
 							@Override
 							public void run() {
-								if (areaList.size() > 0 && areaAdapter != null) {
-									areaAdapter.notifyDataSetChanged();
+								if (!TextUtils.isEmpty(result)) {
+									try {
+										areaList.clear();
+										JSONArray array = new JSONArray(result);
+										for (int i = 0; i < array.length(); i++) {
+											JSONObject itemObj = array.getJSONObject(i);
+											CityDto dto = new CityDto();
+											if (!itemObj.isNull("id")) {
+												dto.areaId = itemObj.getString("id");
+											}
+											if (!itemObj.isNull("city")) {
+												dto.areaName = itemObj.getString("city");
+											}
+											areaList.add(dto);
+										}
+
+										if (areaAdapter != null) {
+											areaAdapter.notifyDataSetChanged();
+										}
+
+									} catch (JSONException e) {
+										e.printStackTrace();
+									}
 								}
 							}
 						});
 
-					} catch (JSONException e) {
-						e.printStackTrace();
 					}
-				}
+				});
 			}
-		});
+		}).start();
 	}
 	
 	/**

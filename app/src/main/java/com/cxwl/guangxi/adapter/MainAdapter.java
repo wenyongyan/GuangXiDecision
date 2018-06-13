@@ -15,15 +15,14 @@ import com.cxwl.guangxi.common.ColumnData;
 
 import net.tsz.afinal.FinalBitmap;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainAdapter extends BaseAdapter{
 	
-	private Context mContext = null;
-	private LayoutInflater mInflater = null;
-	private List<ColumnData> mArrayList = new ArrayList<>();
-	private int height = 0;
+	private Context mContext;
+	private LayoutInflater mInflater;
+	private List<ColumnData> mArrayList;
+	public static int height = 0;
 	
 	private final class ViewHolder{
 		TextView tvName;
@@ -32,9 +31,8 @@ public class MainAdapter extends BaseAdapter{
 	
 	private ViewHolder mHolder = null;
 	
-	public MainAdapter(Context context, List<ColumnData> mArrayList, int height) {
+	public MainAdapter(Context context, List<ColumnData> mArrayList) {
 		mContext = context;
-		this.height = height;
 		this.mArrayList = mArrayList;
 		mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}

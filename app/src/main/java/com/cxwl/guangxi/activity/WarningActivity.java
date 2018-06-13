@@ -1,13 +1,11 @@
 package com.cxwl.guangxi.activity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Point;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.TextUtils;
@@ -53,18 +51,23 @@ import com.cxwl.guangxi.common.CONST;
 import com.cxwl.guangxi.dto.WarningDto;
 import com.cxwl.guangxi.manager.DBManager;
 import com.cxwl.guangxi.utils.CommonUtil;
-import com.cxwl.guangxi.utils.CustomHttpClient;
+import com.cxwl.guangxi.utils.OkHttpUtil;
 
-import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * 预警
@@ -72,8 +75,7 @@ import java.util.List;
  *
  */
 
-@SuppressLint("SimpleDateFormat") 
-public class WarningActivity extends BaseActivity implements OnClickListener, OnMapClickListener, 
+public class WarningActivity extends BaseActivity implements OnClickListener, OnMapClickListener,
 OnMarkerClickListener, InfoWindowAdapter, OnCameraChangeListener, OnDistrictSearchListener{
 	
 	private Context mContext = null;
@@ -88,13 +90,13 @@ OnMarkerClickListener, InfoWindowAdapter, OnCameraChangeListener, OnDistrictSear
 	private Marker selectMarker = null;
 //	private String warningUrl = "http://decision.tianqi.cn/alarm12379/grepalarm2.php?areaid=45";//预警地址
 	private String warningUrl = "http://decision-admin.tianqi.cn/Home/extra/getwarnsguangxi";//预警地址
-	private List<WarningDto> warningList = new ArrayList<WarningDto>();
-	private List<WarningDto> proList = new ArrayList<WarningDto>();//省级预警
+	private List<WarningDto> warningList = new ArrayList<>();
+	private List<WarningDto> proList = new ArrayList<>();//省级预警
 	private RelativeLayout reList = null;
 	private ListView cityListView = null;
 	private WarningAdapter cityAdapter = null;
 	private ProgressBar progressBar = null;
-	private List<Marker> markerList = new ArrayList<Marker>();
+	private List<Marker> markerList = new ArrayList<>();
 	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 	
 	@Override
@@ -129,8 +131,8 @@ OnMarkerClickListener, InfoWindowAdapter, OnCameraChangeListener, OnDistrictSear
 		}
 		
 		drawDistrict("450000");
-		
-		asyncQuery(warningUrl);
+
+		OkHttpWarning(warningUrl);
     }
 	
 	/**
@@ -223,132 +225,101 @@ OnMarkerClickListener, InfoWindowAdapter, OnCameraChangeListener, OnDistrictSear
 	/**
 	 * 异步请求
 	 */
-	private void asyncQuery(String requestUrl) {
-		HttpAsyncTask task = new HttpAsyncTask();
-		task.setMethod("GET");
-		task.setTimeOut(CustomHttpClient.TIME_OUT);
-		task.execute(requestUrl);
-	}
-	
-	/**
-	 * 异步请求方法
-	 * @author dell
-	 *
-	 */
-	private class HttpAsyncTask extends AsyncTask<String, Void, String> {
-		private String method = "GET";
-		private List<NameValuePair> nvpList = new ArrayList<>();
-		
-		public HttpAsyncTask() {
-		}
+	private void OkHttpWarning(final String url) {
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				OkHttpUtil.enqueue(new Request.Builder().url(url).build(), new Callback() {
+					@Override
+					public void onFailure(Call call, IOException e) {
 
-		@Override
-		protected String doInBackground(String... url) {
-			String result = null;
-			if (method.equalsIgnoreCase("POST")) {
-				result = CustomHttpClient.post(url[0], nvpList);
-			} else if (method.equalsIgnoreCase("GET")) {
-				result = CustomHttpClient.get(url[0]);
-			}
-			return result;
-		}
+					}
 
-		@Override
-		protected void onPostExecute(String requestResult) {
-			super.onPostExecute(requestResult);
-			progressBar.setVisibility(View.GONE);
-			if (requestResult != null) {
-				try {
-					JSONObject object = new JSONObject(requestResult);
-					if (object != null) {
-						HashMap<String, List<WarningDto>> map = new HashMap<String, List<WarningDto>>();
-						map.clear();
-						if (!object.isNull("data")) {
-							warningList.clear();
-							JSONArray jsonArray = object.getJSONArray("data");
-							for (int i = 0; i < jsonArray.length(); i++) {
-								JSONArray tempArray = jsonArray.getJSONArray(i);
-								WarningDto dto = new WarningDto();
-								dto.html = tempArray.optString(1);
-								String[] array = dto.html.split("-");
-								String item0 = array[0];
-								String item1 = array[1];
-								String item2 = array[2];
-								
-								dto.item0 = item0;
-								dto.provinceId = item0.substring(0, 2);
-								dto.type = item2.substring(0, 5);
-								dto.color = item2.substring(5, 7);
-								dto.time = item1;
-								dto.lng = tempArray.optString(2);
-								dto.lat = tempArray.optString(3);
-								dto.name = tempArray.optString(0);
-								
-								if (!dto.name.contains("解除")) {
-									warningList.add(dto);
-									
-									String key = dto.lat+","+dto.lng;
-									if (map.containsKey(key)) {
-										map.get(key).add(0, dto);
-									}else {
-										List<WarningDto> mapList = new ArrayList<WarningDto>();
-										mapList.clear();
-										mapList.add(dto);
-										map.put(key, mapList);
+					@Override
+					public void onResponse(Call call, Response response) throws IOException {
+						if (!response.isSuccessful()) {
+							return;
+						}
+						final String result = response.body().string();
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								progressBar.setVisibility(View.GONE);
+								if (!TextUtils.isEmpty(result)) {
+									try {
+										JSONObject object = new JSONObject(result);
+										if (object != null) {
+											HashMap<String, List<WarningDto>> map = new HashMap<>();
+											map.clear();
+											if (!object.isNull("data")) {
+												warningList.clear();
+												JSONArray jsonArray = object.getJSONArray("data");
+												for (int i = 0; i < jsonArray.length(); i++) {
+													JSONArray tempArray = jsonArray.getJSONArray(i);
+													WarningDto dto = new WarningDto();
+													dto.html = tempArray.optString(1);
+													String[] array = dto.html.split("-");
+													String item0 = array[0];
+													String item1 = array[1];
+													String item2 = array[2];
+
+													dto.item0 = item0;
+													dto.provinceId = item0.substring(0, 2);
+													dto.type = item2.substring(0, 5);
+													dto.color = item2.substring(5, 7);
+													dto.time = item1;
+													dto.lng = tempArray.optString(2);
+													dto.lat = tempArray.optString(3);
+													dto.name = tempArray.optString(0);
+
+													if (!dto.name.contains("解除")) {
+														warningList.add(dto);
+
+														String key = dto.lat+","+dto.lng;
+														if (map.containsKey(key)) {
+															map.get(key).add(0, dto);
+														}else {
+															List<WarningDto> mapList = new ArrayList<>();
+															mapList.clear();
+															mapList.add(dto);
+															map.put(key, mapList);
+														}
+													}
+												}
+
+												String count = warningList.size()+"";
+												if (count != null) {
+													if (count.equals("0")) {
+														tvPrompt.setText("广西暂无预警"+"\n"+sdf.format(new Date())+"更新");
+														rePrompt.setVisibility(View.VISIBLE);
+														ivControl.setVisibility(View.GONE);
+														return;
+													}else {
+														tvPrompt.setText("广西共有" + count + "条预警");
+														rePrompt.setVisibility(View.VISIBLE);
+														ivControl.setVisibility(View.VISIBLE);
+														setWarningInfo();
+													}
+												}
+
+												if (cityAdapter != null) {
+													cityAdapter.notifyDataSetChanged();
+												}
+
+												removeMarkers();
+												addMarkersToMap(map);
+											}
+										}
+									} catch (JSONException e) {
+										e.printStackTrace();
 									}
 								}
 							}
-							
-							String count = warningList.size()+"";
-							if (count != null) {
-								if (count.equals("0")) {
-									tvPrompt.setText("广西暂无预警"+"\n"+sdf.format(new Date())+"更新");
-									rePrompt.setVisibility(View.VISIBLE);
-									ivControl.setVisibility(View.GONE);
-									return;
-								}else {
-									tvPrompt.setText("广西共有" + count + "条预警");
-									rePrompt.setVisibility(View.VISIBLE);
-									ivControl.setVisibility(View.VISIBLE);
-									setWarningInfo();
-								}
-							}
-							
-							if (cityAdapter != null) {
-								cityAdapter.notifyDataSetChanged();
-							}
-							
-							removeMarkers();
-							addMarkersToMap(map);
-						}
+						});
 					}
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
+				});
 			}
-		}
-
-		@SuppressWarnings("unused")
-		private void setParams(NameValuePair nvp) {
-			nvpList.add(nvp);
-		}
-
-		private void setMethod(String method) {
-			this.method = method;
-		}
-
-		private void setTimeOut(int timeOut) {
-			CustomHttpClient.TIME_OUT = timeOut;
-		}
-
-		/**
-		 * 取消当前task
-		 */
-		@SuppressWarnings("unused")
-		private void cancelTask() {
-			CustomHttpClient.shuttdownRequest();
-			this.cancel(true);
-		}
+		}).start();
 	}
 	
 	private void setWarningInfo() {
@@ -709,13 +680,10 @@ OnMarkerClickListener, InfoWindowAdapter, OnCameraChangeListener, OnDistrictSear
 
 	@Override
 	public void onCameraChange(CameraPosition arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void onCameraChangeFinish(CameraPosition arg0) {
-		// TODO Auto-generated method stub
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
 		Point leftPoint = new Point(0, dm.heightPixels);

@@ -239,7 +239,7 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
                             }
 
                         }
-                    } else if (msgZoom > 8.0f && msgZoom <= 10f){//乡镇站点
+                    } else if (msgZoom > 8.0f && msgZoom <= 9.5f){//乡镇站点
                         //绘制自动站
                         for (int i = 0; i < realDatas.size(); i++) {
                             FactDto dto = realDatas.get(i);
@@ -286,7 +286,7 @@ public class FactProActivity extends BaseActivity implements View.OnClickListene
                             }
 
                         }
-                    } else if (msgZoom > 10f){//村站点
+                    } else if (msgZoom > 9.5f){//村站点
                         //绘制自动站
                         for (int i = 0; i < realDatas.size(); i++) {
                             FactDto dto = realDatas.get(i);

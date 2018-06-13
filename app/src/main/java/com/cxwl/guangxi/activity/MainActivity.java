@@ -186,9 +186,6 @@ public class MainActivity extends BaseActivity implements OnClickListener, AMapL
 		if (mAdapter != null) {
 			mAdapter.height = height-statusBarHeight-height1-height2;
 			mAdapter.notifyDataSetChanged();
-			ViewGroup.LayoutParams params = gridView.getLayoutParams();
-			params.height = height-height1-statusBarHeight;
-			gridView.setLayoutParams(params);
 		}
 	}
 
